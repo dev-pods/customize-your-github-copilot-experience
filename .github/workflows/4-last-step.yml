@@ -19,7 +19,7 @@ env:
 jobs:
   find_exercise:
     name: Encontrar Issue do Exercício
-    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
+    uses: dev-pods/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.1.1
 
   check_step_work:
     name: Verificar trabalho do passo
@@ -36,9 +36,9 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: skills/exercise-toolkit
+          repository: dev-pods/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.7.0
+          ref: v0.1.1
 
       - name: Find last comment
         id: find-last-comment
@@ -101,9 +101,9 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: skills/exercise-toolkit
+          repository: dev-pods/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.7.0
+          ref: v0.1.1
 
       - name: Create comment - step finished - final review next
         uses: GrantBirki/comment@v2.1.1

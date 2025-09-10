@@ -18,7 +18,7 @@ jobs:
     if: |
       !github.event.repository.is_template
     name: Iniciar Exercício
-    uses: skills/exercise-toolkit/.github/workflows/start-exercise.yml@v0.7.0
+    uses: dev-pods/exercise-toolkit/.github/workflows/start-exercise.yml@v0.1.1
     with:
       exercise-title: "Personalize Sua Experiência com GitHub Copilot"
       intro-message: "Aprenda como personalizar o GitHub Copilot para funcionar melhor para sua equipe e projetos."
@@ -80,9 +80,9 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: skills/exercise-toolkit
+          repository: dev-pods/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.7.0
+          ref: v0.1.1
 
       - name: Create comment - add step content
         uses: GrantBirki/comment@v2.1.1
