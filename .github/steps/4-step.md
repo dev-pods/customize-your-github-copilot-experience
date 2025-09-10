@@ -1,98 +1,98 @@
-## Step 4: Creating Custom Chat Modes
+## Passo 4: Criando Modos de Chat Personalizados
 
-Now that you have instructions, prompts, and templates working together, you want to take customization one step further. When brainstorming new assignments, you'd like a specialized chat experience that focuses purely on ideation rather than implementation.
+Agora que você tem instruções, prompts e templates trabalhando juntos, você quer levar a personalização um passo além. Ao fazer brainstorm de novas tarefas, você gostaria de uma experiência de chat especializada que foca puramente na ideação em vez da implementação.
 
-### 📖 Theory: Custom Chat Modes
+### 📖 Teoria: Modos de Chat Personalizados
 
-Custom chat modes (`*.chatmode.md`) fundamentally change how Copilot behaves, creating specialized conversation experiences with specific tools and response formats, even unique personalities! They are selected from a dropdown list in the Copilot Chat interface.
+Modos de chat personalizados (`*.chatmode.md`) mudam fundamentalmente como o Copilot se comporta, criando experiências de conversa especializadas com ferramentas e formatos de resposta específicos, até personalidades únicas! Eles são selecionados de uma lista suspensa na interface do Copilot Chat.
 
-Visual Studio Code will look for `*.chatmode.md` files in `.github/chatmodes/` directory by [default](vscode://settings/chat.modeFilesLocations).
+O Visual Studio Code procurará arquivos `*.chatmode.md` no diretório `.github/chatmodes/` por [padrão](vscode://settings/chat.modeFilesLocations).
 
 > [!TIP]
-> Learn more about Chat Modes:
+> Saiba mais sobre Modos de Chat:
 >
 > - [VS Code Docs: Custom Chat Modes](https://code.visualstudio.com/docs/copilot/chat/chat-modes#_custom-chat-modes)
 > - [VS Code Docs: Copilot Customization Guide](https://code.visualstudio.com/docs/copilot/copilot-customization)
 
 
-### ⌨️ Activity: Create an Assignment Brainstorming Chat Mode
+### ⌨️ Atividade: Criar um Modo de Chat de Brainstorm para Tarefas
 
-Now let's create a specialized chat mode for brainstorming assignment ideas.
+Agora vamos criar um modo de chat especializado para fazer brainstorm de ideias de tarefas.
 
-1. Create a new file called `.github/chatmodes/assignment-brainstorming.chatmode.md`
+1. Crie um novo arquivo chamado `.github/chatmodes/assignment-brainstorming.chatmode.md`
 
-1. Add the following content to create a focused brainstorming experience:
+1. Adicione o seguinte conteúdo para criar uma experiência de brainstorm focada:
 
    ```markdown
    ---
-   description: 💡 Assignment brainstorming assistant
+   description: 💡 Assistente de brainstorm de tarefas
    tools: ["codebase", "search"]
    ---
 
-   # 💡 Assignment Brainstorming Assistant
+   # 💡 Assistente de Brainstorm de Tarefas
 
-   **BRAINSTORM MODE ACTIVATED** 🚀
+   **MODO BRAINSTORM ATIVADO** 🚀
 
-   I'm your assignment brainstorming partner for Mergington High School! I analyze your existing curriculum and suggest creative next assignments that build on what your students have already learned.
+   Eu sou seu parceiro de brainstorm de tarefas para a Mergington High School! Eu analiso seu currículo existente e sugiro próximas tarefas criativas que se baseiam no que seus estudantes já aprenderam.
 
-   ## My Response Style
+   ## Meu Estilo de Resposta
 
-   Every response follows this format:
+   Toda resposta segue este formato:
 
-   🔍 QUICK SCAN: [Brief analysis of existing assignments]
-   💡 IDEA BURST: [3-5 rapid-fire suggestions]
-   🎯 NEXT QUESTION: [What I need to know to help more]
+   🔍 ESCANEAMENTO RÁPIDO: [Análise breve das tarefas existentes]
+   💡 EXPLOSÃO DE IDEIAS: [3-5 sugestões rápidas]
+   🎯 PRÓXIMA PERGUNTA: [O que preciso saber para ajudar mais]
 
-   ## Rules
+   ## Regras
 
-   - ⚡ Keep responses short
-   - 🎯 Always end with a specific question
-   - 💡 Focus on concepts, not details
-   - 🚫 Never write assignment specs
-   - 📊 Base ideas on existing curriculum gaps
+   - ⚡ Mantenha respostas curtas
+   - 🎯 Sempre termine com uma pergunta específica
+   - 💡 Foque em conceitos, não detalhes
+   - 🚫 Nunca escreva especificações de tarefas
+   - 📊 Baseie ideias em lacunas do currículo existente
    ```
 
-### ⌨️ Activity: Test the Brainstorming Chat Mode
+### ⌨️ Atividade: Testar o Modo de Chat de Brainstorm
 
-1. Open Copilot Chat in VS Code.
+1. Abra o Copilot Chat no VS Code.
 
-1. Select your custom chat mode from the chat mode dropdown list.
+1. Selecione seu modo de chat personalizado da lista suspensa de modos de chat.
 
    <img width="379" height="218" alt="copilot chat mode: assignment brainstorming mode selected" src="https://github.com/user-attachments/assets/4effffa7-b8ef-4830-8050-9c777f9f0189" />
 
-1. Test the chat mode with questions a teacher might ask. Notice the different response format!
+1. Teste o modo de chat com perguntas que um professor faria. Note o formato de resposta diferente!
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > What assignment topics are missing from my current curriculum?
+   > Que tópicos de tarefas estão faltando no meu currículo atual?
    > ```
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Suggest 3 advanced Python assignments for my students.
+   > Sugira 3 tarefas avançadas de Python para meus estudantes.
    > ```
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > What would be a good follow-up assignment after the data analysis assignment?
+   > Qual seria uma boa tarefa de acompanhamento após a tarefa de análise de dados?
    > ```
 
-1. Try asking follow-up questions to see how the chat mode maintains its personality throughout the conversation.
+1. Tente fazer perguntas de acompanhamento para ver como o modo de chat mantém sua personalidade durante a conversa.
 
-1. Commit and push your changes for the new chat mode file: `.github/chatmodes/assignment-brainstorming.chatmode.md`
+1. Commit e push suas mudanças para o novo arquivo de modo de chat: `.github/chatmodes/assignment-brainstorming.chatmode.md`
 
-1. Wait for Mona to give you a final review!
+1. Aguarde a Mona dar uma revisão final!
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Tendo problemas? 🤷</summary><br/>
 
-- Make sure the chat mode file is in `.github/chatmodes/` directory with the `.chatmode.md` extension.
-- Chat modes are selected from the dropdown list at the top of the chat interface, not with `@` mentions.
-- If the chat mode doesn't appear in the dropdown, restart VS Code or reload the window.
-- The `tools` array in frontmatter controls which capabilities the chat mode can access.
-- Chat modes maintain their personality throughout the entire conversation thread.
+- Certifique-se de que o arquivo de modo de chat está no diretório `.github/chatmodes/` com a extensão `.chatmode.md`.
+- Modos de chat são selecionados da lista suspensa no topo da interface de chat, não com menções `@`.
+- Se o modo de chat não aparecer na lista suspensa, reinicie o VS Code ou recarregue a janela.
+- O array `tools` no frontmatter controla quais capacidades o modo de chat pode acessar.
+- Modos de chat mantêm sua personalidade durante toda a conversa.
 
 </details>

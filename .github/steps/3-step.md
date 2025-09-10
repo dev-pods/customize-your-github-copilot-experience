@@ -1,121 +1,121 @@
-## Step 3: Building Reusable Prompts
+## Passo 3: Construindo Prompts Reutilizáveis
 
-Now that you've established instructions for assignments, you want to streamline creating new assignments.
+Agora que você estabeleceu instruções para tarefas, você quer simplificar a criação de novas tarefas.
 
-Creating assignments is a repetitive task and involves multiple steps, a perfect scenario for a reusable prompt!
+Criar tarefas é uma tarefa repetitiva que envolve múltiplos passos, um cenário perfeito para um prompt reutilizável!
 
-- Creating the assignment
-- Updating the website configuration to load the new assignment
+- Criar a tarefa
+- Atualizar a configuração do site para carregar a nova tarefa
 
-### 📖 Theory: Prompt Files
+### 📖 Teoria: Arquivos de Prompt
 
-Prompt files (`*.prompt.md`) are reusable prompts to simplify common and useful tasks in your project. They are selected in Copilot Chat using slash commands (`/`).
+Arquivos de prompt (`*.prompt.md`) são prompts reutilizáveis para simplificar tarefas comuns e úteis em seu projeto. Eles são selecionados no Copilot Chat usando comandos de barra (`/`).
 
-They can reference other workspace files, prompt files, or instructions files by using Markdown-style links relative to the prompt file location.
+Eles podem referenciar outros arquivos do workspace, arquivos de prompt ou arquivos de instruções usando links estilo Markdown relativos à localização do arquivo de prompt.
 
-Visual Studio Code will look for `*.prompt.md` files in `.github/prompts/` directory by [default](vscode://settings/chat.promptFilesLocations).
+O Visual Studio Code procurará arquivos `*.prompt.md` no diretório `.github/prompts/` por [padrão](vscode://settings/chat.promptFilesLocations).
 
 > [!TIP]
-> Use prompt files to define repeatable tasks and workflows.
+> Use arquivos de prompt para definir tarefas e fluxos de trabalho repetitivos.
 >
-> When writing prompts focus on **WHAT** needs to be done. You can reference instructions for the **HOW**.
+> Ao escrever prompts, foque em **O QUE** precisa ser feito. Você pode referenciar instruções para o **COMO**.
 
-See the [VS Code Docs: Prompt Files](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) page for more information.
+Veja a página [VS Code Docs: Prompt Files](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental) para mais informações.
 
-### ⌨️ Activity: Create an Assignment Prompt
+### ⌨️ Atividade: Criar um Prompt de Tarefa
 
-Now let's create a reusable prompt that automates the entire assignment creation process. This is perfect for a prompt file because creating assignments involves multiple repetitive steps that follow the same pattern every time - exactly the kind of workflow that benefits from automation.
+Agora vamos criar um prompt reutilizável que automatiza todo o processo de criação de tarefas. Isso é perfeito para um arquivo de prompt porque criar tarefas envolve múltiplos passos repetitivos que seguem o mesmo padrão toda vez - exatamente o tipo de fluxo de trabalho que se beneficia da automação.
 
-1. Create a new file called `.github/prompts/new-assignment.prompt.md`
+1. Crie um novo arquivo chamado `.github/prompts/new-assignment.prompt.md`
 
-1. Add the following content to create a comprehensive assignment generation prompt:
+1. Adicione o seguinte conteúdo para criar um prompt abrangente de geração de tarefas:
 
    ```markdown
    ---
    mode: agent
-   description: Create a new programming homework assignment
+   description: Criar uma nova tarefa de programação
    ---
 
-   # Create New Programming Assignment
+   # Criar Nova Tarefa de Programação
 
-   Your goal is to generate a new homework assignment for the Mergington High School students.
+   Seu objetivo é gerar uma nova tarefa de casa para os estudantes da Mergington High School.
 
-   ## Step 1: Gather Assignment Information
+   ## Passo 1: Coletar Informações da Tarefa
 
-   If not already provided by the user, ask what the assignment will be about.
+   Se não for já fornecido pelo usuário, pergunte sobre o que será a tarefa.
 
-   ## Step 2: Create Assignment Structure
+   ## Passo 2: Criar Estrutura da Tarefa
 
-   1. Create a new directory in the `assignments` folder with a unique name based on the assignment topic
-   1. Create a new file in the directory named `README.md` with the structure from the [assignment-template.md](../../templates/assignment-template.md) file
-   1. Fill out the assignment details in the README file
-   1. (Optional) Add starter code or attachments if the assignment needs them - add these files to the same assignment folder
+   1. Crie um novo diretório na pasta `assignments` com um nome único baseado no tópico da tarefa
+   1. Crie um novo arquivo no diretório chamado `README.md` com a estrutura do arquivo [assignment-template.md](../../templates/assignment-template.md)
+   1. Preencha os detalhes da tarefa no arquivo README
+   1. (Opcional) Adicione código inicial ou anexos se a tarefa precisar deles - adicione esses arquivos à mesma pasta da tarefa
 
-   ## Step 3: Update Website Configuration
+   ## Passo 3: Atualizar Configuração do Site
 
-   Update the assignments list in [config.json](../../config.json) website configuration file to include the new assignment. For the dueDate field, use the current date plus 7 days unless specified otherwise.
+   Atualize a lista de tarefas no arquivo de configuração do site [config.json](../../config.json) para incluir a nova tarefa. Para o campo dueDate, use a data atual mais 7 dias a menos que especificado de outra forma.
    ```
 
-### ⌨️ Activity: Test the Assignment Prompt
+### ⌨️ Atividade: Testar o Prompt de Tarefa
 
-1. Open Copilot Chat in VS Code and ensure you're in `Agent` mode.
+1. Abra o Copilot Chat no VS Code e certifique-se de que está no modo `Agent`.
 
-1. Run your prompt by typing `/new-assignment` in the chat input. There are 2 options:
+1. Execute seu prompt digitando `/new-assignment` no input do chat. Há 2 opções:
 
-   - Type just `/new-assignment` without a description. Copilot will ask what the assignment should be about.
-   - Include the topic directly: `/new-assignment Building REST APIs with FastAPI framework`
+   - Digite apenas `/new-assignment` sem uma descrição. O Copilot perguntará sobre o que a tarefa deve ser.
+   - Inclua o tópico diretamente: `/new-assignment Construindo APIs REST com framework FastAPI`
 
       <details>
-      <summary>💡 Assignment Topic Ideas</summary>
+      <summary>💡 Ideias de Tópicos de Tarefas</summary>
 
       ```text
-      Python Text Processing - working with strings, file I/O, and text manipulation
+      Processamento de Texto em Python - trabalhando com strings, I/O de arquivos e manipulação de texto
       ```
 
       ```text
-      Data Structures in Python - lists, dictionaries, sets, and tuples
+      Estruturas de Dados em Python - listas, dicionários, conjuntos e tuplas
       ```
 
       ```text
-      Python Data Visualization - using matplotlib or plotly for charts and graphs
+      Visualização de Dados em Python - usando matplotlib ou plotly para gráficos e diagramas
       ```
 
       ```text
-      Building REST APIs with FastAPI framework
+      Construindo APIs REST com framework FastAPI
       ```
 
       ```text
-      Statistics with Python - data analysis and statistical calculations using pandas and numpy
+      Estatística com Python - análise de dados e cálculos estatísticos usando pandas e numpy
       ```
 
       </details>
 
-1. Verify the new assignment appears in the assignments list on the website preview.
+1. Verifique se a nova tarefa aparece na lista de tarefas no preview do site.
 
    <details>
-   <summary>Assignment not showing? 🔍</summary>
+   <summary>Tarefa não aparecendo? 🔍</summary>
 
-   Check these items:
+   Verifique estes itens:
 
-   - Refresh the page.
-   - A new directory was created in `assignments/`.
-   - The `config.json` file was updated with the new assignment.
+   - Atualize a página.
+   - Um novo diretório foi criado em `assignments/`.
+   - O arquivo `config.json` foi atualizado com a nova tarefa.
 
    </details>
 
-1. Review the generated assignment content to ensure it matches your established conventions.
+1. Revise o conteúdo da tarefa gerada para garantir que corresponde às suas convenções estabelecidas.
 
-1. Commit and push your changes:
+1. Commit e push suas mudanças:
 
-   - The new prompt file: `.github/prompts/new-assignment.prompt.md`
-   - The generated assignment directory and files.
-   - Updated `config.json` configuration.
+   - O novo arquivo de prompt: `.github/prompts/new-assignment.prompt.md`
+   - O diretório e arquivos da tarefa gerada.
+   - `config.json` atualizado.
 
-1. Wait for Mona to prepare the next step!
+1. Aguarde a Mona preparar o próximo passo!
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Tendo problemas? 🤷</summary><br/>
 
-- Make sure the prompt file is in the `.github/prompts/` directory with the `.prompt.md` extension.
+- Certifique-se de que o arquivo de prompt está no diretório `.github/prompts/` com a extensão `.prompt.md`.
 
 </details>

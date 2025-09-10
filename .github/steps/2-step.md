@@ -1,93 +1,93 @@
-## Step 2: File-Specific Instructions
+## Passo 2: Instruções Específicas para Arquivos
 
-With the general project instructions ready, you realize you need more specific formatting rules related to just the assignments. While your repository-wide instructions work great for general coding standards, you don't want to clutter them with detailed assignment structure requirements that get included in every chat message.
+Com as instruções gerais do projeto prontas, você percebe que precisa de regras de formatação mais específicas relacionadas apenas às tarefas. Embora suas instruções gerais do repositório funcionem bem para padrões gerais de codificação, você não quer sobrecarregá-las com requisitos detalhados de estrutura de tarefas que são incluídos em todas as mensagens de chat.
 
-You want to make sure all your assignments follow the same pattern and structure so students have a consistent experience, but these rules should only apply when working on assignment files.
+Você quer garantir que todas as suas tarefas sigam o mesmo padrão e estrutura para que os estudantes tenham uma experiência consistente, mas essas regras devem se aplicar apenas quando trabalhando em arquivos de tarefas.
 
-### 📖 Theory: Custom Instruction Files
+### 📖 Teoria: Arquivos de Instruções Personalizadas
 
-Instruction files (`*.instructions.md`) provide Copilot targeted guidance for specific files or directories in your project.
+Arquivos de instruções (`*.instructions.md`) fornecem ao Copilot orientações direcionadas para arquivos ou diretórios específicos em seu projeto.
 
-Unlike repository-wide instructions that apply everywhere, these files use the `applyTo` field in the [frontmatter](https://jekyllrb.com/docs/front-matter/) using [glob syntax](https://code.visualstudio.com/docs/editor/glob-patterns) to target specific files. This automatically applies the instructions whenever Copilot works on files matching that pattern. Alternatively, you can manually attach instructions using the **Add Context** button in Copilot Chat.
+Diferentemente das instruções gerais do repositório que se aplicam em todos os lugares, esses arquivos usam o campo `applyTo` no [frontmatter](https://jekyllrb.com/docs/front-matter/) usando [sintaxe glob](https://code.visualstudio.com/docs/editor/glob-patterns) para direcionar arquivos específicos. Isso aplica automaticamente as instruções sempre que o Copilot trabalha em arquivos que correspondem a esse padrão. Alternativamente, você pode anexar instruções manualmente usando o botão **Add Context** no Copilot Chat.
 
-Visual Studio Code will look for `*.instructions.md` files in `.github/instructions/` directory by [default](vscode://settings/chat.instructionsFilesLocations).
+O Visual Studio Code procurará arquivos `*.instructions.md` no diretório `.github/instructions/` por [padrão](vscode://settings/chat.instructionsFilesLocations).
 
 > [!TIP]
-> Instructions should focus on **HOW** a task should be done - describing the guidelines, standards, and conventions used in that particular part of the codebase
+> As instruções devem focar em **COMO** uma tarefa deve ser feita - descrevendo as diretrizes, padrões e convenções usadas naquela parte específica do código
 
-See the [VS Code Docs: Custom Instructions](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions) page for more information.
+Veja a página [VS Code Docs: Custom Instructions](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions) para mais informações.
 
-### ⌨️ Activity: Create Assignment-Specific Instructions
+### ⌨️ Atividade: Criar Instruções Específicas para Tarefas
 
-Now let's create targeted instructions specifically for assignment files to ensure they follow consistent structure and formatting.
+Agora vamos criar instruções direcionadas especificamente para arquivos de tarefas para garantir que elas sigam estrutura e formatação consistentes.
 
-1. First, let's examine the existing assignment template. Open `templates/assignment-template.md` to see the structure we want all assignments to follow.
+1. Primeiro, vamos examinar o template de tarefa existente. Abra `templates/assignment-template.md` para ver a estrutura que queremos que todas as tarefas sigam.
 
-1. Create a new file called `.github/instructions/assignments.instructions.md`
+1. Crie um novo arquivo chamado `.github/instructions/assignments.instructions.md`
 
-1. Add the following content to define assignment formatting standards. It will also ensure they are automatically applied for every chat request to Markdown (`.md`) files in `assignments` directory.
+1. Adicione o seguinte conteúdo para definir padrões de formatação de tarefas. Isso também garantirá que sejam aplicados automaticamente para cada solicitação de chat para arquivos Markdown (`.md`) no diretório `assignments`.
 
    ```markdown
    ---
    applyTo: "assignments/**/*.md"
    ---
 
-   # Assignment Markdown Structure Guidelines
+   # Diretrizes de Estrutura Markdown para Tarefas
 
-   All assignment markdown files should follow these guidelines:
+   Todos os arquivos markdown de tarefas devem seguir estas diretrizes:
 
-   ## 1. Template Usage
+   ## 1. Uso de Template
 
-   - Assignment markdown files must follow the structure in [`templates/assignment-template.md`](../../templates/assignment-template.md).
-   - The assignment must be created as a `README.md` file
-   - Do not remove or skip required sections from the template.
+   - Arquivos markdown de tarefas devem seguir a estrutura em [`templates/assignment-template.md`](../../templates/assignment-template.md).
+   - A tarefa deve ser criada como um arquivo `README.md`
+   - Não remova ou pule seções obrigatórias do template.
 
-   ## 2. Section Guidance
+   ## 2. Orientação de Seções
 
-   The section headers should reflect the structure in the template, including the exact icon usage.
+   Os cabeçalhos das seções devem refletir a estrutura no template, incluindo o uso exato de ícones.
 
-   - **Title**: Replace `[Assignment Title]` with a short, descriptive name (e.g., `Python Basics`, `Loops and Conditionals`, `Functions and Modules`).
-   - **Objective**: Write 1-2 sentences summarizing what the student will learn or accomplish. Focus on the main skills or concepts.
-   - **Tasks**: For each task:
-      - Use a specific, action-oriented task name
-      - In the Description, clearly state what the student must do.
-      - In Requirements, use bullet points to list the expected outcomes or features. Be specific and measurable
-      - Provide example input/output in code blocks if helpful.
+   - **Título**: Substitua `[Assignment Title]` com um nome curto e descritivo (ex: `Python Básico`, `Loops e Condicionais`, `Funções e Módulos`).
+   - **Objetivo**: Escreva 1-2 frases resumindo o que o estudante aprenderá ou realizará. Foque nas principais habilidades ou conceitos.
+   - **Tarefas**: Para cada tarefa:
+      - Use um nome de tarefa específico e orientado à ação
+      - Na Descrição, declare claramente o que o estudante deve fazer.
+      - Nos Requisitos, use pontos para listar os resultados ou recursos esperados. Seja específico e mensurável
+      - Forneça exemplo de entrada/saída em blocos de código se útil.
 
-   Do not include extra sections unless explicitly specified.
+   Não inclua seções extras a menos que explicitamente especificado.
    ```
 
-### ⌨️ Activity: Test the Assignment Instructions
+### ⌨️ Atividade: Testar as Instruções de Tarefa
 
-1. Open the file `assignments/games-in-python/README.md` in VS Code. This assignment doesn't match all the conventions you've setup as a teacher.
+1. Abra o arquivo `assignments/games-in-python/README.md` no VS Code. Esta tarefa não corresponde a todas as convenções que você configurou como professor.
 
-1. Take a moment to review the current structure of this assignment file. Notice how it differs from the template structure you examined earlier. You can also view how it currently appears on the **Site Preview** tab.
+1. Reserve um momento para revisar a estrutura atual deste arquivo de tarefa. Note como ela difere da estrutura do template que você examinou anteriormente. Você também pode ver como ela aparece atualmente na aba **Site Preview**.
 
-1. With the assignment file open, ask Copilot in `Agent` mode to update the assignment structure:
+1. Com o arquivo de tarefa aberto, pergunte ao Copilot no modo `Agent` para atualizar a estrutura da tarefa:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Update this assignment file to follow the project standards and template structure
+   > Atualize este arquivo de tarefa para seguir os padrões do projeto e estrutura do template
    > ```
 
-1. Observe how Copilot references the general project instructions and the assignment specific instruction files.
+1. Observe como o Copilot referencia as instruções gerais do projeto e os arquivos de instruções específicos de tarefas.
 
    <img width="492" height="376" alt="screenshot of Copilot chat showing attached references" src="https://github.com/user-attachments/assets/dbf26be3-5940-4619-af4e-0a4380f16494" />
 
-1. Compare the suggested changes with the original file structure to see how Copilot applied your instructions. Apply the suggested changes and check how the updated assignment now appears on the **Site Preview**.
+1. Compare as mudanças sugeridas com a estrutura do arquivo original para ver como o Copilot aplicou suas instruções. Aplique as mudanças sugeridas e verifique como a tarefa atualizada agora aparece no **Site Preview**.
 
-1. Commit both files to the `main` branch and push your changes to GitHub.
+1. Commit ambos os arquivos para a branch `main` e push suas mudanças para o GitHub.
 
    - `.github/instructions/assignments.instructions.md`
    - `assignments/games-in-python/README.md`
 
-1. Wait for Mona to prepare the next step!
+1. Aguarde a Mona preparar o próximo passo!
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Tendo problemas? 🤷</summary><br/>
 
-- Make sure you committed both files to `main` branch:
+- Certifique-se de que você fez commit de ambos os arquivos para a branch `main`:
   - `.github/instructions/assignments.instructions.md`
   - `assignments/games-in-python/README.md`
 
