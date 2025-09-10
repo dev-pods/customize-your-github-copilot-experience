@@ -39,9 +39,9 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: dev-pods/exercise-toolkit
+          repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.1.1
+          ref: v0.7.0
 
       - name: Find last comment
         id: find-last-comment
@@ -152,9 +152,9 @@ jobs:
       - name: Get response templates
         uses: actions/checkout@v4
         with:
-          repository: dev-pods/exercise-toolkit
+          repository: skills/exercise-toolkit
           path: exercise-toolkit
-          ref: v0.1.1
+          ref: v0.7.0
 
       - name: Create comment - step finished
         uses: GrantBirki/comment@v2.1.1
