@@ -1,71 +1,71 @@
-## Step 1: Setting Up Copilot Instructions
+## Passo 1: Configurando as Instruções do Copilot
 
-You're a teacher at Mergington High School who creates homework assignments and coding exercises for students. You maintain a static website to share these assignments and want to establish general standards for AI assistants to ensure consistent code quality and project structure.
+Você é professor(a) na Mergington High School e cria tarefas e exercícios de programação para os alunos. Você mantém um site estático para compartilhar essas tarefas e quer estabelecer padrões gerais para assistentes de IA, garantindo qualidade e estrutura consistentes no código do projeto.
 
-You've heard Copilot Instructions can help with that!
+Você ouviu dizer que as Copilot Instructions podem ajudar com isso!
 
 <details>
-<summary>Website screenshot 📸</summary><br/>
+<summary>Captura de tela do site 📸</summary><br/>
 
-You will run this website in the first activity!
+Você vai executar este site na primeira atividade!
 
 <img width="600" alt="screenshot of homework website" src="https://github.com/user-attachments/assets/2383b6e9-64d5-4907-94b3-b67153efb008" />
 
 </details>
 
-### 📖 Theory: What are repository custom instructions?
+### 📖 Teoria: O que são instruções personalizadas de repositório?
 
-Repository custom instructions let you provide Copilot with repository-specific guidance and preferences that help it understand your project context and standards. By creating a `.github/copilot-instructions.md` file, you can ensure that Copilot's suggestions consistently follow your project conventions and coding standards.
+As instruções personalizadas de repositório permitem fornecer ao Copilot orientações e preferências específicas do repositório que o ajudam a entender o contexto e os padrões do seu projeto. Ao criar um arquivo `.github/copilot-instructions.md`, você garante que as sugestões do Copilot sigam consistentemente as convenções e padrões de código do seu projeto.
 
-The complete set of instructions will be automatically added to all requests that you submit to Copilot Chat in your repository.
+O conjunto completo de instruções será adicionado automaticamente a todas as solicitações que você enviar ao Copilot Chat no seu repositório.
 
 > [!TIP]
-> Keep instructions short and focused on the "how" of the project. This could be purpose, folder structure, coding standards, key tools, expected formats, etc.
+> Mantenha as instruções curtas e focadas no "como" do projeto. Isso pode incluir propósito, estrutura de pastas, padrões de código, ferramentas principais, formatos esperados, etc.
 
-See the [GitHub Docs: Repository Custom Instructions](https://docs.github.com/en/copilot/how-tos/custom-instructions/adding-repository-custom-instructions-for-github-copilot) page for more information.
+Consulte a página [GitHub Docs: Repository Custom Instructions](https://docs.github.com/en/copilot/how-tos/custom-instructions/adding-repository-custom-instructions-for-github-copilot) para mais informações.
 
-### ⌨️ Activity: Explore the Educational Website Project
+### ⌨️ Atividade: Explorar o Projeto do Site Educacional
 
-To work with custom instructions, let's first set up our development environment and explore the project structure.
+Para trabalhar com instruções personalizadas, vamos primeiro configurar nosso ambiente de desenvolvimento e explorar a estrutura do projeto.
 
-1. Right-click the below button to open the **Create Codespace** page in a new tab. Use the default configuration.
+1. Clique com o botão direito no botão abaixo para abrir a página **Create Codespace** em uma nova aba. Use a configuração padrão.
 
    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/{{full_repo_name}}?quickstart=1)
 
-1. Confirm the **Repository** field is your copy of the exercise, not the original, then click the green **Create Codespace** button.
+1. Confirme que o campo **Repository** é a sua cópia do exercício, não o original, e clique no botão verde **Create Codespace**.
 
-   - ✅ Your copy: `/{{full_repo_name}}`
+   - ✅ Sua cópia: `/{{full_repo_name}}`
    - ❌ Original: `/skills/customize-your-github-copilot-experience`
 
-1. Wait a moment for Visual Studio Code to load in your browser and for all extensions to install.
+1. Aguarde um momento para o Visual Studio Code carregar no seu navegador e todas as extensões serem instaladas.
 
-   - Ensure the **Live Preview** extension is activated.
-   - Ensure the **Python** extension is activated.
+   - Certifique-se de que a extensão **Live Preview** está ativada.
+   - Certifique-se de que a extensão **Python** está ativada.
 
-1. Right-click on `index.html` and select **Show Preview** to see the website in action.
+1. Clique com o botão direito em `index.html` e selecione **Show Preview** para ver o site em funcionamento.
 
-   > ❕ **Important**: Keep the preview tab open to see the live updates. We will be making edits throughout the exercise.
+   > ❕ **Importante**: Mantenha a aba de preview aberta para ver as atualizações em tempo real. Faremos edições ao longo de todo o exercício.
 
-1. Explore the project structure:
+1. Explore a estrutura do projeto:
 
-   - Browse the `assets/` folder to see the website assets (CSS, JavaScript, images).
-   - Look at the `assignments/` folder to understand the existing assignment formats.
-   - Review `index.html` in the root directory to see the main website structure.
-   - Review `config.json` in the root directory to see how the assignments are set up.
+   - Navegue pela pasta `assets/` para ver os recursos do site (CSS, JavaScript, imagens).
+   - Veja a pasta `assignments/` para entender os formatos de tarefas existentes.
+   - Revise o `index.html` no diretório raiz para ver a estrutura principal do site.
+   - Revise o `config.json` no diretório raiz para ver como as tarefas estão configuradas.
 
-### ⌨️ Activity: Create Repository Copilot Instructions
+### ⌨️ Atividade: Criar Instruções de Repositório para o Copilot
 
-Now that you've explored the project, let's create custom instructions to help Copilot understand your educational website project.
+Agora que você explorou o projeto, vamos criar instruções personalizadas para ajudar o Copilot a entender seu projeto de site educacional.
 
-1. In VS Code, create a new file called:
+1. No VS Code, crie um novo arquivo chamado:
 
    ```text
    .github/copilot-instructions.md
    ``` 
 
-   > ❕ **Important:** Make sure the file name is correct. This specific filename is required for Copilot to recognize it.
+   > ❕ **Importante:** Certifique-se de que o nome do arquivo está correto. Este nome de arquivo específico é necessário para que o Copilot o reconheça.
 
-1. Add the following content so Copilot understands the project's purpose, structure, and requirements:
+1. Adicione o seguinte conteúdo para que o Copilot entenda o propósito, a estrutura e os requisitos do projeto:
 
    ```markdown
    # Project Description
@@ -92,7 +92,7 @@ Now that you've explored the project, let's create custom instructions to help C
    - **Student-friendly**: Use clear, encouraging language that motivates students
    ```
 
-1. Test your instructions by asking Copilot about the project:
+1. Teste suas instruções perguntando ao Copilot sobre o projeto:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -100,18 +100,18 @@ Now that you've explored the project, let's create custom instructions to help C
    > Briefly explain this project to me
    > ```
 
-1. Notice that Copilot uses your custom instructions as a reference in the response.
+1. Observe que o Copilot usa suas instruções personalizadas como referência na resposta.
 
    <img width="504" height="183" alt="image" src="https://github.com/user-attachments/assets/2214ed9e-c165-4440-a23e-d2d33c0231a9" />
 
-1. Commit the `.github/copilot-instructions.md` file to the `main` branch and push it to GitHub.
+1. Faça o commit do arquivo `.github/copilot-instructions.md` na branch `main` e envie (push) para o GitHub.
 
-1. Wait for Mona to prepare the next step!
+1. Aguarde a Mona preparar o próximo passo!
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Está com problemas? 🤷</summary><br/>
 
-- The `.github/copilot-instructions.md` file should be at the root of the `.github` folder
-- Make sure you committed and pushed the changes.
+- O arquivo `.github/copilot-instructions.md` deve estar na raiz da pasta `.github`
+- Certifique-se de que você fez o commit e o push das alterações.
 
 </details>

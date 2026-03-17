@@ -1,42 +1,42 @@
-# Customize Your GitHub Copilot Experience
+# Personalize Sua Experiência com o GitHub Copilot
 
-_Customize GitHub Copilot's behavior with custom instructions, prompts, and custom agents for your specific development workflows._
+_Personalize o comportamento do GitHub Copilot com instruções personalizadas, prompts e agentes personalizados para seus fluxos de trabalho de desenvolvimento específicos._
 
-## Welcome
+## Bem-vindo
 
-- **Who is this for**: Developers and educators who want to tailor Copilot's behavior to their specific workflows
-- **What you'll learn**: How to set up custom instructions, prompts, and custom agents to make Copilot more effective for your specific use cases
-- **What you'll build**: A customized Copilot setup with instructions, prompts, and custom agents that automatically generate consistent pieces of code following your project standards
-- **Prerequisites**: [Getting Started with GitHub Copilot](https://github.com/skills/getting-started-with-github-copilot) exercise
-- **How long**: This exercise takes less than 30 minutes to complete.
+- **Para quem é**: Desenvolvedores e educadores que querem adaptar o comportamento do Copilot aos seus fluxos de trabalho específicos
+- **O que você vai aprender**: Como configurar instruções personalizadas, prompts e agentes personalizados para tornar o Copilot mais eficaz para seus casos de uso específicos
+- **O que você vai construir**: Uma configuração personalizada do Copilot com instruções, prompts e agentes personalizados que geram automaticamente trechos de código consistentes seguindo os padrões do seu projeto
+- **Pré-requisitos**: Exercício [Getting Started with GitHub Copilot](https://github.com/skills/getting-started-with-github-copilot)
+- **Duração**: Este exercício leva menos de 30 minutos para ser concluído.
 
-In this exercise, you will:
+Neste exercício, você vai:
 
-1. Set up repository-wide custom instructions to provide Copilot the essential project context
-1. Create targeted custom instructions for specific file types and directories
-1. Build reusable prompt templates for common tasks like homework assignments
-1. Configure custom agents for specialized workflows
+1. Configurar instruções personalizadas em nível de repositório para fornecer ao Copilot o contexto essencial do projeto
+1. Criar instruções personalizadas direcionadas para tipos de arquivo e diretórios específicos
+1. Construir templates de prompt reutilizáveis para tarefas comuns como exercícios escolares
+1. Configurar agentes personalizados para fluxos de trabalho especializados
 
-### How to start this exercise
+### Como iniciar este exercício
 
-Simply copy the exercise to your account, then give your favorite Octocat (Mona) **about 20 seconds** to prepare the first lesson, then **refresh the page**.
+Basta copiar o exercício para sua conta, depois dê à sua Octocat favorita (Mona) **cerca de 20 segundos** para preparar a primeira lição, e então **atualize a página**.
 
-[![](https://img.shields.io/badge/Copy%20Exercise-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=customize-your-github-copilot-experience&owner=%40me&name=skills-customize-your-github-copilot-experience&description=Exercise:+Customize+Your+GitHub+Copilot+Experience&visibility=public)
+[![](https://img.shields.io/badge/Copiar%20Exerc%C3%ADcio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=skills&template_name=customize-your-github-copilot-experience&owner=%40me&name=skills-customize-your-github-copilot-experience&description=Exercise:+Customize+Your+GitHub+Copilot+Experience&visibility=public)
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Está com problemas? 🤷</summary><br/>
 
-When copying the exercise, we recommend the following settings:
+Ao copiar o exercício, recomendamos as seguintes configurações:
 
-- For owner, choose your personal account or an organization to host the repository.
+- Para o proprietário, escolha sua conta pessoal ou uma organização para hospedar o repositório.
 
-- We recommend creating a public repository, since private repositories will use Actions minutes.
+- Recomendamos criar um repositório público, pois repositórios privados consumirão minutos de Actions.
 
-If the exercise isn't ready in 20 seconds, please check the [Actions](../../actions) tab.
+Se o exercício não estiver pronto em 20 segundos, verifique a aba [Actions](../../actions).
 
-- Check to see if a job is running. Sometimes it simply takes a bit longer.
+- Verifique se há um job em execução. Às vezes simplesmente demora um pouco mais.
 
-- If the page shows a failed job, please submit an issue. Nice, you found a bug! 🐛
+- Se a página mostrar um job com falha, por favor envie uma issue. Legal, você encontrou um bug! 🐛
 
 </details>
 

@@ -1,31 +1,31 @@
-## Step 4: Creating Custom Agents
+## Passo 4: Criando Agentes Personalizados
 
-Now that you have instructions, prompts, and templates working together, you want to take customization one step further. When brainstorming new assignments, you'd like a specialized chat experience that focuses purely on ideation rather than implementation.
+Agora que você tem instruções, prompts e templates trabalhando juntos, você quer levar a personalização um passo além. Ao fazer brainstorming de novas tarefas, você gostaria de ter uma experiência de chat especializada que foque puramente na ideação, em vez da implementação.
 
-### 📖 Theory: Custom Agents
+### 📖 Teoria: Agentes Personalizados
 
-Custom agents (`*.agent.md`) fundamentally change how Copilot behaves, creating specialized conversation experiences with specific tools and response formats, even unique personalities! They are selected from a dropdown list in the Copilot Chat interface.
+Agentes personalizados (`*.agent.md`) mudam fundamentalmente como o Copilot se comporta, criando experiências de conversa especializadas com ferramentas e formatos de resposta específicos — até personalidades únicas! Eles são selecionados em uma lista suspensa na interface do Copilot Chat.
 
-Visual Studio Code will look for `*.agent.md` files in `.github/agents/` directory.
+O Visual Studio Code procura arquivos `*.agent.md` no diretório `.github/agents/`.
 
 > [!TIP]
-> Learn more about Custom Agents:
+> Saiba mais sobre Agentes Personalizados:
 >
 > - [VS Code Docs: Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
 > - [GitHub Docs: Custom Agents Configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
 
 
-### ⌨️ Activity: Create an Assignment Brainstorming Custom Agent
+### ⌨️ Atividade: Criar um Agente Personalizado para Brainstorming de Tarefas
 
-Now let's create a specialized custom agent for brainstorming assignment ideas.
+Agora vamos criar um agente personalizado especializado em brainstorming de ideias para tarefas.
 
-1. Create a new file called:
+1. Crie um novo arquivo chamado:
 
    ```text
    .github/agents/assignment-brainstorming.agent.md
    ```
 
-1. Add the following content to create a focused brainstorming experience:
+1. Adicione o seguinte conteúdo para criar uma experiência de brainstorming focada:
 
    ```markdown
    ---
@@ -57,15 +57,15 @@ Now let's create a specialized custom agent for brainstorming assignment ideas.
    - 📊 Base ideas on existing curriculum gaps
    ```
 
-### ⌨️ Activity: Test the Brainstorming Custom Agent
+### ⌨️ Atividade: Testar o Agente Personalizado de Brainstorming
 
-1. Open Copilot Chat in VS Code.
+1. Abra o Copilot Chat no VS Code.
 
-1. Select your custom agent from the agent dropdown list.
+1. Selecione seu agente personalizado na lista suspensa de agentes.
 
    <img width="379" height="218" alt="copilot agent: assignment brainstorming agent selected" src="https://github.com/user-attachments/assets/4effffa7-b8ef-4830-8050-9c777f9f0189" />
 
-1. Test the custom agent with questions a teacher might ask. Notice the different response format!
+1. Teste o agente personalizado com perguntas que um professor faria. Observe o formato de resposta diferente!
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
@@ -85,17 +85,17 @@ Now let's create a specialized custom agent for brainstorming assignment ideas.
    > What would be a good follow-up assignment after the data analysis assignment?
    > ```
 
-1. Try asking follow-up questions to see how the custom agent maintains its personality throughout the conversation.
+1. Tente fazer perguntas de acompanhamento para ver como o agente personalizado mantém sua personalidade ao longo da conversa.
 
-1. Commit and push your changes for the new custom agent file: `.github/agents/assignment-brainstorming.agent.md`
+1. Faça o commit e envie (push) suas alterações para o arquivo do novo agente personalizado: `.github/agents/assignment-brainstorming.agent.md`
 
-1. Wait for Mona to give you a final review!
+1. Aguarde a Mona dar a revisão final!
 
 <details>
-<summary>Having trouble? 🤷</summary><br/>
+<summary>Está com problemas? 🤷</summary><br/>
 
-- Make sure the custom agent file is in `.github/agents/` directory with the `.agent.md` extension.
-- Custom agents are selected from the dropdown list at the bottom of the chat interface, not with `@` mentions.
-- If the custom agent doesn't appear in the dropdown, restart VS Code or reload the window.
+- Certifique-se de que o arquivo do agente personalizado está no diretório `.github/agents/` com a extensão `.agent.md`.
+- Agentes personalizados são selecionados na lista suspensa na parte inferior da interface do chat, não com menções `@`.
+- Se o agente personalizado não aparecer na lista suspensa, reinicie o VS Code ou recarregue a janela.
 
 </details>
