@@ -77,7 +77,7 @@ jobs:
           vars: |
             step_number: 4
             results_table:
-              - description: "Created assignment-brainstorming.agent.md file"
+              - description: "Arquivo assignment-brainstorming.agent.md criado"
                 passed: ${{ steps.check-file-exists.outcome == 'success' }}
 
       # END: Check practical exercise
@@ -130,4 +130,4 @@ jobs:
     uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.1
     with:
       issue-url: ${{ needs.find_exercise.outputs.issue-url }}
-      exercise-title: "Customize Your GitHub Copilot Experience"
+      exercise-title: "Personalize Sua Experiência com o GitHub Copilot"

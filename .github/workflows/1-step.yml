@@ -77,7 +77,7 @@ jobs:
           vars: |
             step_number: 1
             results_table:
-              - description: "Created copilot-instructions.md file"
+              - description: "Arquivo copilot-instructions.md criado"
                 passed: ${{ steps.check-file-exists.outcome == 'success' }}
 
       # END: Check practical exercise

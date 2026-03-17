@@ -85,10 +85,10 @@ jobs:
             const newDirs = dirs.filter(dir => !knownAssignments.includes(dir));
 
             if (newDirs.length > 0) {
-              const message = `Found new assignment directory`;
+              const message = `Novo diret\u00f3rio de tarefa encontrado`;
               core.setOutput('STEP_MESSAGE', message);
             } else {
-              const message = 'No new assignment directory found in assignments/ folder';
+              const message = 'Nenhum novo diret\u00f3rio de tarefa encontrado em assignments/';
               core.setOutput('STEP_MESSAGE', message);
               core.setFailed(message);
             }
@@ -105,10 +105,10 @@ jobs:
             const assignments = config.assignments || [];
 
             if (assignments.length > 4) {
-              const message = `Found ${assignments.length} assignments in config.json (expected more than 4)`;
+              const message = `Encontrados ${assignments.length} assignments em config.json (esperado mais de 4)`;
               core.setOutput('STEP_MESSAGE', message);
             } else {
-              const message = `Found ${assignments.length} assignments in config.json (expected more than 4)`;
+              const message = `Encontrados ${assignments.length} assignments em config.json (esperado mais de 4)`;
               core.setOutput('STEP_MESSAGE', message);
               core.setFailed(message);
             }
@@ -124,7 +124,7 @@ jobs:
           vars: |
             step_number: 3
             results_table:
-              - description: "Created new-assignment.prompt.md file"
+              - description: "Arquivo new-assignment.prompt.md criado"
                 passed: ${{ steps.check-file-exists.outcome == 'success' }}
               - description: ${{ steps.check-new-assignment-dir.outputs.STEP_MESSAGE }}
                 passed: ${{ steps.check-new-assignment-dir.outcome == 'success' }}
