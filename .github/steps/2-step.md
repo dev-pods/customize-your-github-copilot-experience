@@ -37,29 +37,29 @@ Agora vamos criar instruções direcionadas especificamente para arquivos de tar
    applyTo: "assignments/**/*.md"
    ---
 
-   # Assignment Markdown Structure Guidelines
+   # Diretrizes de Estrutura para Markdowns de Tarefas
 
-   All assignment markdown files should follow these guidelines:
+   Todos os arquivos markdown de tarefas devem seguir estas diretrizes:
 
-   ## 1. Template Usage
+   ## 1. Uso do Template
 
-   - Assignment markdown files must follow the structure in [`templates/assignment-template.md`](../../templates/assignment-template.md).
-   - The assignment must be created as a `README.md` file
-   - Do not remove or skip required sections from the template.
+   - Os arquivos markdown de tarefas devem seguir a estrutura em [`templates/assignment-template.md`](../../templates/assignment-template.md).
+   - A tarefa deve ser criada como um arquivo `README.md`
+   - Não remova ou pule seções obrigatórias do template.
 
-   ## 2. Section Guidance
+   ## 2. Orientação das Seções
 
-   The section headers should reflect the structure in the template, including the exact icon usage.
+   Os cabeçalhos das seções devem refletir a estrutura do template, incluindo o uso exato dos ícones.
 
-   - **Title**: Replace `[Assignment Title]` with a short, descriptive name (e.g., `Python Basics`, `Loops and Conditionals`, `Functions and Modules`).
-   - **Objective**: Write 1-2 sentences summarizing what the student will learn or accomplish. Focus on the main skills or concepts.
-   - **Tasks**: For each task:
-      - Use a specific, action-oriented task name
-      - In the Description, clearly state what the student must do.
-      - In Requirements, use bullet points to list the expected outcomes or features. Be specific and measurable
-      - Provide example input/output in code blocks if helpful.
+   - **Título**: Substitua `[Assignment Title]` por um nome curto e descritivo (ex: `Python Basics`, `Loops and Conditionals`, `Functions and Modules`).
+   - **Objetivo**: Escreva 1-2 frases resumindo o que o aluno aprenderá ou realizará. Foque nas principais habilidades ou conceitos.
+   - **Tarefas**: Para cada tarefa:
+      - Use um nome de tarefa específico e orientado à ação
+      - Na Descrição, indique claramente o que o aluno deve fazer.
+      - Nos Requisitos, use bullet points para listar os resultados ou funcionalidades esperadas. Seja específico e mensurável
+      - Forneça exemplos de entrada/saída em blocos de código se útil.
 
-   Do not include extra sections unless explicitly specified.
+   Não inclua seções extras a menos que explicitamente especificado.
    ```
 
 ### ⌨️ Atividade: Testar as Instruções de Tarefas

@@ -37,28 +37,28 @@ Agora vamos criar um prompt reutilizável que automatiza todo o processo de cria
    ```markdown
    ---
    agent: agent
-   description: Create a new programming homework assignment
-   argument-hint: Provide assignment details
+   description: Criar uma nova tarefa de programação
+   argument-hint: Forneça os detalhes da tarefa
    ---
 
-   # Create New Programming Assignment
+   # Criar Nova Tarefa de Programação
 
-   Your goal is to generate a new homework assignment for the Mergington High School students.
+   Seu objetivo é gerar uma nova tarefa para os alunos da Mergington High School.
 
-   ## Step 1: Gather Assignment Information
+   ## Passo 1: Coletar Informações da Tarefa
 
-   If not already provided by the user, ask what the assignment will be about.
+   Se ainda não fornecido pelo usuário, pergunte sobre o que será a tarefa.
 
-   ## Step 2: Create Assignment Structure
+   ## Passo 2: Criar a Estrutura da Tarefa
 
-   1. Create a new directory in the `assignments` folder with a unique name based on the assignment topic
-   1. Create a new file in the directory named `README.md` with the structure from the [assignment-template.md](../../templates/assignment-template.md) file
-   1. Fill out the assignment details in the README file
-   1. (Optional) Add starter code or attachments if the assignment needs them - add these files to the same assignment folder
+   1. Crie um novo diretório na pasta `assignments` com um nome único baseado no tema da tarefa
+   1. Crie um novo arquivo no diretório chamado `README.md` com a estrutura do arquivo [assignment-template.md](../../templates/assignment-template.md)
+   1. Preencha os detalhes da tarefa no arquivo README
+   1. (Opcional) Adicione código inicial ou anexos se a tarefa precisar — adicione esses arquivos na mesma pasta da tarefa
 
-   ## Step 3: Update Website Configuration
+   ## Passo 3: Atualizar a Configuração do Site
 
-   Update the assignments list in [config.json](../../config.json) website configuration file to include the new assignment. For the dueDate field, use the current date plus 7 days unless specified otherwise.
+   Atualize a lista de tarefas no arquivo de configuração do site [config.json](../../config.json) para incluir a nova tarefa. Para o campo dueDate, use a data atual mais 7 dias, a menos que especificado de outra forma.
    ```
 
 ### ⌨️ Atividade: Testar o Prompt de Tarefas

@@ -68,28 +68,28 @@ Agora que você explorou o projeto, vamos criar instruções personalizadas para
 1. Adicione o seguinte conteúdo para que o Copilot entenda o propósito, a estrutura e os requisitos do projeto:
 
    ```markdown
-   # Project Description
+   # Descrição do Projeto
 
-   This project is an educational website for sharing homework assignments and coding exercises with students. Students can browse, view, and download assignments directly from the portal.
+   Este projeto é um site educacional para compartilhar tarefas e exercícios de programação com os alunos. Os alunos podem navegar, visualizar e baixar tarefas diretamente pelo portal.
 
-   ## Project Structure
+   ## Estrutura do Projeto
 
-   - [`assignments/`](../assignments/) Each homework assignment is stored in its own subfolder with a consistent structure.
-   - [`templates/`](../templates/) Reusable templates for new content
-   - [`assets/`](../assets/) Contains the website assets including CSS, JavaScript, images, and configuration files
-   - [`index.html`](../index.html) The main website page that serves as a static portal for browsing and viewing assignments. Content is configurable via [`config.json`](../config.json) file to dynamically generate assignment lists and details.
+   - [`assignments/`](../assignments/) Cada tarefa é armazenada em sua própria subpasta com uma estrutura consistente.
+   - [`templates/`](../templates/) Templates reutilizáveis para novo conteúdo
+   - [`assets/`](../assets/) Contém os recursos do site incluindo CSS, JavaScript, imagens e arquivos de configuração
+   - [`index.html`](../index.html) A página principal do site que serve como um portal estático para navegar e visualizar tarefas. O conteúdo é configurável via arquivo [`config.json`](../config.json) para gerar dinamicamente listas e detalhes das tarefas.
 
-   ## Project Guidelines
+   ## Diretrizes do Projeto
 
-   - Maintain consistent styling across all pages
-   - Keep file and folder names descriptive and organized
+   - Manter estilo consistente em todas as páginas
+   - Manter nomes de arquivos e pastas descritivos e organizados
 
-   ## Educational Standards
+   ## Padrões Educacionais
 
-   When generating content for this project:
+   Ao gerar conteúdo para este projeto:
 
-   - **Learning-focused**: All content should be designed with clear learning objectives and appropriate difficulty levels
-   - **Student-friendly**: Use clear, encouraging language that motivates students
+   - **Foco no aprendizado**: Todo conteúdo deve ser elaborado com objetivos de aprendizado claros e níveis de dificuldade apropriados
+   - **Amigável ao aluno**: Usar linguagem clara e encorajadora que motive os alunos
    ```
 
 1. Teste suas instruções perguntando ao Copilot sobre o projeto:
