@@ -49,11 +49,11 @@ Agora vamos criar instruções direcionadas especificamente para arquivos de tar
 
    ## 2. Orientação das Seções
 
-   Os cabeçalhos das seções devem refletir a estrutura do template, incluindo o uso exato dos ícones.
+   Os cabeçalhos das seções devem usar EXATAMENTE o mesmo texto do template, incluindo os ícones emoji. NÃO traduza os cabeçalhos.
 
-   - **Título**: Substitua `[Assignment Title]` por um nome curto e descritivo (ex: `Python Basics`, `Loops and Conditionals`, `Functions and Modules`).
-   - **Objetivo**: Escreva 1-2 frases resumindo o que o aluno aprenderá ou realizará. Foque nas principais habilidades ou conceitos.
-   - **Tarefas**: Para cada tarefa:
+   - `# 📘 Assignment: [Assignment Title]` — Substitua `[Assignment Title]` por um nome curto e descritivo (ex: `Python Basics`, `Loops and Conditionals`, `Functions and Modules`).
+   - `## 🎯 Objective` — Escreva 1-2 frases resumindo o que o aluno aprenderá ou realizará. Foque nas principais habilidades ou conceitos.
+   - `## 📝 Tasks` — Para cada tarefa, use `### 🛠️ [Task Title]`:
       - Use um nome de tarefa específico e orientado à ação
       - Na Descrição, indique claramente o que o aluno deve fazer.
       - Nos Requisitos, use bullet points para listar os resultados ou funcionalidades esperadas. Seja específico e mensurável
