@@ -73,7 +73,7 @@ Agora vamos criar instruções direcionadas especificamente para arquivos de tar
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Update this assignment file to follow the project standards and template structure
+   > Atualize este arquivo de tarefa para seguir os padrões do projeto e a estrutura do template
    > ```
 
 1. Observe como o Copilot referencia as instruções gerais do projeto e os arquivos de instrução específicos para tarefas.

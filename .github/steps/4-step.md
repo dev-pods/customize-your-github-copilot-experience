@@ -70,19 +70,19 @@ Agora vamos criar um agente personalizado especializado em brainstorming de idei
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > What assignment topics are missing from my current curriculum?
+   > Quais tópicos de tarefas estão faltando no meu currículo atual?
    > ```
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Suggest 3 advanced Python assignments for my students.
+   > Sugira 3 tarefas avançadas de Python para meus alunos.
    > ```
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > What would be a good follow-up assignment after the data analysis assignment?
+   > Qual seria uma boa tarefa de acompanhamento após a tarefa de análise de dados?
    > ```
 
 1. Tente fazer perguntas de acompanhamento para ver como o agente personalizado mantém sua personalidade ao longo da conversa.

@@ -68,29 +68,29 @@ Agora vamos criar um prompt reutilizável que automatiza todo o processo de cria
 1. Execute seu prompt digitando `/new-assignment` no campo de entrada do chat. Há 2 opções:
 
    - Digite apenas `/new-assignment` sem descrição. O Copilot perguntará sobre o que a tarefa deve ser.
-   - Inclua o tema diretamente: `/new-assignment Building REST APIs with FastAPI framework`
+   - Inclua o tema diretamente: `/new-assignment Construindo APIs REST com o framework FastAPI`
 
       <details>
       <summary>💡 Ideias de Temas para Tarefas</summary>
 
       ```text
-      Python Text Processing - working with strings, file I/O, and text manipulation
+      Processamento de Texto com Python - trabalhando com strings, I/O de arquivos e manipulação de texto
       ```
 
       ```text
-      Data Structures in Python - lists, dictionaries, sets, and tuples
+      Estruturas de Dados em Python - listas, dicionários, sets e tuplas
       ```
 
       ```text
-      Python Data Visualization - using matplotlib or plotly for charts and graphs
+      Visualização de Dados com Python - usando matplotlib ou plotly para gráficos
       ```
 
       ```text
-      Building REST APIs with FastAPI framework
+      Construindo APIs REST com o framework FastAPI
       ```
 
       ```text
-      Statistics with Python - data analysis and statistical calculations using pandas and numpy
+      Estatística com Python - análise de dados e cálculos estatísticos usando pandas e numpy
       ```
 
       </details>

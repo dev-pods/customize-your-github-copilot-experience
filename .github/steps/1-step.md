@@ -97,7 +97,7 @@ Agora que você explorou o projeto, vamos criar instruções personalizadas para
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Briefly explain this project to me
+   > Explique brevemente este projeto para mim
    > ```
 
 1. Observe que o Copilot usa suas instruções personalizadas como referência na resposta.
