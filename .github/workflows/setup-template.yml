@@ -1,0 +1,32 @@
+name: Setup Template
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update_template_url:
+    name: Update template URL in README
+    if: github.event.repository.is_template
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update README template URL
+        run: |
+          OWNER="${{ github.repository_owner }}"
+          REPO_NAME="${{ github.event.repository.name }}"
+          sed -i "s/template_owner=[^&]*/template_owner=${OWNER}/" README.md
+          sed -i "s/template_name=[^&]*/template_name=${REPO_NAME}/" README.md
+
+      - name: Commit updated README
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: README.md
+          message: "chore: update template URL to match current repository"
+          default_author: github_actions
