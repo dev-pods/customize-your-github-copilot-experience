@@ -1,20 +1,20 @@
-# Task 1
+# Tarefa 1
 def welcome_message():
-    # Ask the user for their name, age, and favorite color
-    # Return a formatted welcome message
+    # Solicite ao usuário seu nome, idade e cor favorita
+    # Retorne uma mensagem de boas-vindas formatada
     pass
 
-# Task 2
+# Tarefa 2
 
 
 def add_two_numbers():
-    # Ask the user to enter two numbers
-    # Add them together, print and return the result
+    # Solicite ao usuário dois números
+    # Some-os, imprima e retorne o resultado
     pass
 
-# Task 3
+# Tarefa 3
 
 
 def is_even(number):
-    # Return True if number is even, False if odd
+    # Retorne True se o número for par, False se ímpar
     pass

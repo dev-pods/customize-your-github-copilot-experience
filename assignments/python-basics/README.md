@@ -1,52 +1,52 @@
 
-# 📘 Assignment: Python Basics
+# 📘 Tarefa: Fundamentos de Python
 
 ## 🎯 Objective
 
-Practice fundamental Python programming skills including user input, string formatting, arithmetic operations, and conditional statements by implementing simple functions.
+Pratique habilidades fundamentais de programação em Python, incluindo entrada de dados do usuário, formatação de strings, operações aritméticas e instruções condicionais, implementando funções simples.
 
 ## 📝 Tasks
 
-### 🛠️ User Input and String Formatting
+### 🛠️ Entrada de Dados e Formatação de Strings
 
-#### Description
-Write a function called `welcome_message()` that interacts with the user and returns a formatted welcome message.
+#### Descrição
+Escreva uma função chamada `welcome_message()` que interaja com o usuário e retorne uma mensagem de boas-vindas formatada.
 
-#### Requirements
-Completed program should:
+#### Requisitos
+O programa completo deve:
 
-- Ask the user for their name, age, and favorite color using `input()`.
-- Return a welcome message formatted as:
-  `Hello, [name]! You are [age] years old and your favorite color is [color].`
-- Example output:
+- Solicitar ao usuário seu nome, idade e cor favorita usando `input()`.
+- Retornar uma mensagem de boas-vindas formatada como:
+  `Hello, [nome]! You are [idade] years old and your favorite color is [cor].`
+- Exemplo de saída:
   `Hello, Alice! You are 25 years old and your favorite color is blue.`
 
-### 🛠️ Basic Arithmetic
+### 🛠️ Aritmética Básica
 
-#### Description
-Write a function called `add_two_numbers()` that prompts the user for two numbers and prints their sum.
+#### Descrição
+Escreva uma função chamada `add_two_numbers()` que solicite ao usuário dois números e imprima a soma deles.
 
-#### Requirements
-Completed program should:
+#### Requisitos
+O programa completo deve:
 
-- Ask the user to enter two numbers.
-- Add the numbers together.
-- Print the result. Example:
-  Enter the first number: 3
-  Enter the second number: 7
+- Solicitar ao usuário dois números.
+- Somar os números.
+- Imprimir o resultado. Exemplo:
+  Digite o primeiro número: 3
+  Digite o segundo número: 7
   10
 
-### 🛠️ Conditional Statements
+### 🛠️ Instruções Condicionais
 
-#### Description
-Write a function called `is_even()` that checks if a number is even.
+#### Descrição
+Escreva uma função chamada `is_even()` que verifique se um número é par.
 
-#### Requirements
-Completed program should:
+#### Requisitos
+O programa completo deve:
 
-- Take a single integer argument.
-- Return `True` if the number is even, and `False` if it is odd.
-- Example usage:
+- Receber um único argumento inteiro.
+- Retornar `True` se o número for par e `False` se for ímpar.
+- Exemplo de uso:
   ```python
   print(is_even(4))  # True
   print(is_even(5))  # False

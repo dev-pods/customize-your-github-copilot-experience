@@ -1,32 +1,32 @@
-# 📘 Assignment: Data Analysis
+# 📘 Tarefa: Análise de Dados
 
 ## 🎯 Objective
 
-Students will learn the basics of data analysis using Python. They will load, explore, and analyze a dataset to extract meaningful insights.
+Os alunos aprenderão os fundamentos da análise de dados usando Python. Eles irão carregar, explorar e analisar um conjunto de dados para extrair insights relevantes.
 
 ## 📝 Tasks
 
-### 🛠️ Data Loading and Exploration
+### 🛠️ Carregamento e Exploração de Dados
 
-#### Description
-Load a provided CSV dataset and perform basic exploration to understand its structure and contents.
+#### Descrição
+Carregue um dataset CSV fornecido e realize uma exploração básica para entender sua estrutura e conteúdo.
 
-#### Requirements
-Completed program should:
+#### Requisitos
+O programa completo deve:
 
-- Load a CSV file using Python (e.g., with pandas)
-- Display the first 5 rows of the dataset
-- Show summary statistics (mean, median, etc.) for numeric columns
+- Carregar um arquivo CSV usando Python (por exemplo, com pandas)
+- Exibir as primeiras 5 linhas do dataset
+- Mostrar estatísticas resumidas (média, mediana, etc.) para colunas numéricas
 
 
-### 🛠️ Data Visualization and Insights
+### 🛠️ Visualização de Dados e Insights
 
-#### Description
-Create visualizations to help understand the data and summarize key findings.
+#### Descrição
+Crie visualizações para ajudar a entender os dados e resuma as principais descobertas.
 
-#### Requirements
-Completed program should:
+#### Requisitos
+O programa completo deve:
 
-- Generate at least two different types of plots (e.g., histogram, scatter plot)
-- Identify and describe at least two insights or trends from the data
-- Save the plots as image files
+- Gerar pelo menos dois tipos diferentes de gráficos (por exemplo, histograma, gráfico de dispersão)
+- Identificar e descrever pelo menos dois insights ou tendências dos dados
+- Salvar os gráficos como arquivos de imagem
