@@ -1,12 +1,12 @@
-name: Passo 4 # Último passo do exercício
+name: Step 4 # Last step of the exercise
 
 on:
   push:
     branches:
       - main
     paths:
-      - '.github/chatmodes/**'
-      - '**/*.chatmode.md'
+      - '.github/agents/**'
+      - '**/*.agent.md'
 
 permissions:
   contents: write
@@ -18,11 +18,11 @@ env:
 
 jobs:
   find_exercise:
-    name: Encontrar Issue do Exercício
-    uses: dev-pods/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.1.1
+    name: Find Exercise Issue
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
 
   check_step_work:
-    name: Verificar trabalho do passo
+    name: Check step work
     needs: [find_exercise]
     runs-on: ubuntu-latest
     env:
@@ -54,17 +54,17 @@ jobs:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
           comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
-          file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+          file: .github/translations/checking-work.md
           edit-mode: replace
 
       # START: Check practical exercise
 
-      - name: Check if assignment-brainstorming.chatmode.md exists
+      - name: Check if assignment-brainstorming.agent.md exists
         id: check-file-exists
         continue-on-error: true
         uses: skills/exercise-toolkit/actions/file-exists@v0.7.0
         with:
-          file: '.github/chatmodes/assignment-brainstorming.chatmode.md'
+          file: '.github/agents/assignment-brainstorming.agent.md'
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -73,11 +73,11 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
           edit-mode: replace
-          file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
+          file: .github/translations/step-results-table.md
           vars: |
             step_number: 4
             results_table:
-              - description: "Created assignment-brainstorming.chatmode.md file"
+              - description: "Arquivo assignment-brainstorming.agent.md criado"
                 passed: ${{ steps.check-file-exists.outcome == 'success' }}
 
       # END: Check practical exercise
@@ -87,7 +87,7 @@ jobs:
         run: exit 1
 
   post_review_content:
-    name: Postar conteúdo de revisão
+    name: Post review content
     needs: [find_exercise, check_step_work]
     runs-on: ubuntu-latest
     env:
@@ -110,7 +110,7 @@ jobs:
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/lesson-review.md
+          file: .github/translations/lesson-review.md
 
       - name: Create comment - add review content
         uses: GrantBirki/comment@v2.1.1
@@ -125,9 +125,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   finish_exercise:
-    name: Finalizar Exercício
+    name: Finish Exercise
     needs: [find_exercise, post_review_content]
     uses: skills/exercise-toolkit/.github/workflows/finish-exercise.yml@v0.7.1
     with:
       issue-url: ${{ needs.find_exercise.outputs.issue-url }}
-      exercise-title: "Personalize Sua Experiência com GitHub Copilot"
+      exercise-title: "Personalize Sua Experiência com o GitHub Copilot"

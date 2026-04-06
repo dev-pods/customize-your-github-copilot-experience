@@ -1,6 +1,6 @@
 {
   "name": "Python 3",
-  "image": "mcr.microsoft.com/vscode/devcontainers/python:3.13",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -23,9 +23,6 @@
         },
         "chat.instructionsFilesLocations": {
           ".github/instructions": true
-        },
-        "chat.modeFilesLocations": {
-          ".github/chatmodes": true
         }
       }
     }

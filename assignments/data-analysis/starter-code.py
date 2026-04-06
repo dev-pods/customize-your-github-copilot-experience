@@ -1,19 +1,19 @@
-# Starter Code: Data Analysis
+# Código Inicial: Análise de Dados
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# 1. Load the dataset (replace 'data.csv' with your file)
+# 1. Carregar o dataset (substitua 'data.csv' pelo seu arquivo)
 df = pd.read_csv('data.csv')
 
-# 2. Display the first 5 rows
+# 2. Exibir as primeiras 5 linhas
 print(df.head())
 
-# 3. Show summary statistics
+# 3. Mostrar estatísticas resumidas
 print(df.describe())
 
-# 4. (Visualization code goes here)
-# Example: df['column_name'].hist()
+# 4. (Código de visualização vai aqui)
+# Exemplo: df['nome_da_coluna'].hist()
 # plt.show()
 
-# Save your plots as images using plt.savefig('filename.png')
+# Salve seus gráficos como imagens usando plt.savefig('nome_do_arquivo.png')

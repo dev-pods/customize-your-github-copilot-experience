@@ -1,23 +1,23 @@
-# Starter Code for Hangman Game Assignment
+# Código Inicial para a Tarefa do Jogo da Forca
 
 import random
 
-# List of possible words
+# Lista de palavras possíveis
 words = ['python', 'hangman', 'challenge', 'programming', 'computer']
 
-# TODO: Randomly select a word from the list
+# TODO: Selecionar aleatoriamente uma palavra da lista
 # secret_word = ...
 
-# TODO: Initialize variables for game state
+# TODO: Inicializar variáveis para o estado do jogo
 # guessed_letters = ...
 # incorrect_guesses = ...
 # max_incorrect = ...
 
-# TODO: Main game loop
+# TODO: Loop principal do jogo
 # while ...:
-#     # Display current progress
-#     # Get user input
-#     # Check guess and update state
-#     # Display result or end game
+#     # Exibir progresso atual
+#     # Obter entrada do usuário
+#     # Verificar palpite e atualizar estado
+#     # Exibir resultado ou encerrar jogo
 
-# TODO: Print win/lose message
+# TODO: Imprimir mensagem de vitória/derrota

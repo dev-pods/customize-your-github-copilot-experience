@@ -56,7 +56,7 @@ jobs:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
           comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
-          file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
+          file: .github/translations/checking-work.md
           edit-mode: replace
 
       # START: Check practical exercise
@@ -99,17 +99,17 @@ jobs:
           issue-number: ${{ env.ISSUE_NUMBER }}
           comment-id: ${{ steps.find-last-comment.outputs.comment-id }}
           edit-mode: replace
-          file: exercise-toolkit/markdown-templates/step-feedback/step-results-table.md
+          file: .github/translations/step-results-table.md
           vars: |
             step_number: 2
             results_table:
-              - description: "Created assignments.instructions.md file"
+              - description: "Arquivo assignments.instructions.md criado"
                 passed: ${{ steps.check-file-exists.outcome == 'success' }}
-              - description: "Checked for applyTo pattern in assignments.instructions.md"
+              - description: "Padrão applyTo encontrado em assignments.instructions.md"
                 passed: ${{ steps.check-for-applyto.outcome == 'success' }}
-              - description: "Checked for 🎯 Objective section in games-in-python README"
+              - description: "Seção 🎯 Objective encontrada no README de games-in-python"
                 passed: ${{ steps.check-for-objective.outcome == 'success' }}
-              - description: "Checked for 📝 Tasks section in games-in-python README"
+              - description: "Seção 📝 Tasks encontrada no README de games-in-python"
                 passed: ${{ steps.check-for-tasks.outcome == 'success' }}
 
       # END: Check practical exercise
@@ -142,7 +142,7 @@ jobs:
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/step-finished-prepare-next-step.md
+          file: .github/translations/step-finished-prepare-next-step.md
           vars: |
             next_step_number: 3
 
@@ -158,7 +158,7 @@ jobs:
         with:
           repository: ${{ env.ISSUE_REPOSITORY }}
           issue-number: ${{ env.ISSUE_NUMBER }}
-          file: exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
+          file: .github/translations/watching-for-progress.md
 
       - name: Disable current workflow and enable next one
         run: |

@@ -1,21 +1,21 @@
-# Starter Code for Python Classes Assignment
+# Código Inicial para a Tarefa de Classes em Python
 
-# Task 1: Define a Simple Class
-# Fill in the class definition below
+# Tarefa 1: Definir uma Classe Simples
+# Preencha a definição da classe abaixo
 
 class Car:
     def __init__(self, make, model, year):
-        # Initialize attributes
+        # Inicializar atributos
         pass
     
     def display_info(self):
-        # Print car details
+        # Imprimir detalhes do carro
         pass
 
-# Task 2: Add Methods and Interactions
-# Add mileage attribute and methods as described in the assignment
+# Tarefa 2: Adicionar Métodos e Interações
+# Adicione o atributo de quilometragem e os métodos descritos na tarefa
 
-# Example usage (uncomment and complete):
+# Exemplo de uso (descomente e complete):
 # my_car = Car('Toyota', 'Corolla', 2020)
 # my_car.display_info()
 # my_car.update_mileage(15000)
