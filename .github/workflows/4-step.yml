@@ -1,4 +1,4 @@
-name: Step 4 # Last step of the exercise
+name: Passo 4 # Last step of the exercise
 
 on:
   push:
