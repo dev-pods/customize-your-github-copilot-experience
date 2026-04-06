@@ -21,7 +21,7 @@ Neste exercício, você vai:
 
 Basta copiar o exercício para sua conta, depois dê à sua Octocat favorita (Mona) **cerca de 20 segundos** para preparar a primeira lição, e então **atualize a página**.
 
-[![](https://img.shields.io/badge/Copiar%20Exerc%C3%ADcio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=diegoccastano-invillia&template_name=customize-your-github-copilot-experience&owner=%40me&name=skills-customize-your-github-copilot-experience&description=Exercise:+Customize+Your+GitHub+Copilot+Experience&visibility=public)
+[![](https://img.shields.io/badge/Copiar%20Exerc%C3%ADcio-%E2%86%92-1f883d?style=for-the-badge&logo=github&labelColor=197935)](https://github.com/new?template_owner=dev-pods&template_name=customize-your-github-copilot-experience&owner=%40me&name=skills-customize-your-github-copilot-experience&description=Exercise:+Customize+Your+GitHub+Copilot+Experience&visibility=public)
 
 <details>
 <summary>Está com problemas? 🤷</summary><br/>
