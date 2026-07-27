@@ -19,7 +19,7 @@ env:
 jobs:
   find_exercise:
     name: Encontrar Issue do Exercício
-    uses: dev-pods/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.1.1
+    uses: skills/exercise-toolkit/.github/workflows/find-exercise-issue.yml@v0.7.0
 
   check_step_work:
     name: Verificar trabalho do passo
