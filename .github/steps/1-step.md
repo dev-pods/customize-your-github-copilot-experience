@@ -2,20 +2,20 @@
 
 Você é professor(a) na Mergington High School e cria tarefas e exercícios de programação para os alunos. Você mantém um site estático para compartilhar essas tarefas e quer estabelecer padrões gerais para assistentes de IA, garantindo qualidade e estrutura consistentes no código do projeto.
 
-Você ouviu dizer que as Copilot Instructions podem ajudar com isso!
+Você ouviu dizer que Copilot Instructions podem ajudar com isso!
 
 <details>
 <summary>Captura de tela do site 📸</summary><br/>
 
 Você vai executar este site na primeira atividade!
 
-<img width="600" alt="screenshot of homework website" src="../images/homework-website-screenshot.png" />
+<img width="600" alt="screenshot of homework website" src="https://github.com/gabrielhartog-invillia/skills-customize-your-github-copilot-experience/blob/main/.github/images/homework-website-screenshot.png?raw=true" />
 
 </details>
 
 ### 📖 Teoria: O que são instruções personalizadas de repositório?
 
-As instruções personalizadas de repositório permitem fornecer ao Copilot orientações e preferências específicas do repositório que o ajudam a entender o contexto e os padrões do seu projeto. Ao criar um arquivo `.github/copilot-instructions.md`, você garante que as sugestões do Copilot sigam consistentemente as convenções e padrões de código do seu projeto.
+As instruções personalizadas de repositório permitem fornecer ao Copilot orientações e preferências específicas do seu repositório, ajudando-o a entender o contexto e os padrões do projeto. Ao criar um arquivo `.github/copilot-instructions.md`, você garante que as sugestões do Copilot sigam consistentemente as convenções e os padrões de código do projeto.
 
 O conjunto completo de instruções será adicionado automaticamente a todas as solicitações que você enviar ao Copilot Chat no seu repositório.
 
@@ -37,7 +37,7 @@ Para trabalhar com instruções personalizadas, vamos primeiro configurar nosso 
    - ✅ Sua cópia: `/{{full_repo_name}}`
    - ❌ Original: `/skills/customize-your-github-copilot-experience`
 
-1. Aguarde um momento para o Visual Studio Code carregar no seu navegador e todas as extensões serem instaladas.
+1. Aguarde um momento para o Visual Studio Code carregar no navegador e para que todas as extensões sejam instaladas.
 
    - Certifique-se de que a extensão **Live Preview** está ativada.
    - Certifique-se de que a extensão **Python** está ativada.
@@ -102,7 +102,7 @@ Agora que você explorou o projeto, vamos criar instruções personalizadas para
 
 1. Observe que o Copilot usa suas instruções personalizadas como referência na resposta.
 
-   <img width="504" height="183" alt="Copilot response showing custom instructions reference" src="../images/copilot-custom-instructions-reference.png" />
+   <img width="504" height="183" alt="Copilot response showing custom instructions reference" src="https://github.com/gabrielhartog-invillia/skills-customize-your-github-copilot-experience/blob/main/.github/images/copilot-custom-instructions-reference.png?raw=true" />
 
 1. Faça o commit do arquivo `.github/copilot-instructions.md` na branch `main` e envie (push) para o GitHub.
 

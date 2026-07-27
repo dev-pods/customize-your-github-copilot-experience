@@ -8,7 +8,7 @@ Você quer garantir que todas as suas tarefas sigam o mesmo padrão e estrutura 
 
 Arquivos de instrução (`*.instructions.md`) fornecem ao Copilot orientações direcionadas para arquivos ou diretórios específicos no seu projeto.
 
-Diferente das instruções de repositório que se aplicam em todo lugar, esses arquivos usam o campo `applyTo` no [frontmatter](https://jekyllrb.com/docs/front-matter/) com [sintaxe glob](https://code.visualstudio.com/docs/editor/glob-patterns) para direcionar arquivos específicos. Isso aplica automaticamente as instruções sempre que o Copilot trabalha em arquivos que correspondem ao padrão. Alternativamente, você pode anexar instruções manualmente usando o botão **Add Context** no Copilot Chat.
+Diferente das instruções de repositório, que se aplicam em todo o projeto, esses arquivos usam o campo `applyTo` no [frontmatter](https://jekyllrb.com/docs/front-matter/) com [sintaxe glob](https://code.visualstudio.com/docs/editor/glob-patterns) para direcionar arquivos específicos. Isso faz com que as instruções sejam aplicadas automaticamente sempre que o Copilot trabalha em arquivos que correspondem ao padrão. Como alternativa, você pode anexar instruções manualmente usando o botão **Add Context** no Copilot Chat.
 
 O Visual Studio Code procura arquivos `*.instructions.md` no diretório `.github/instructions/` por [padrão](vscode://settings/chat.instructionsFilesLocations).
 
@@ -34,7 +34,7 @@ Agora vamos criar instruções direcionadas especificamente para arquivos de tar
 
    ```markdown
    ---
-   description: "Instructions to use whenever creating or editing assignment markdown files to ensure consistency and clarity for students."
+   description: "Instruções para usar sempre que criar ou editar arquivos markdown de assignment, garantindo consistência e clareza para os alunos."
    applyTo: "assignments/**/*.md"
    ---
 
@@ -79,7 +79,7 @@ Agora vamos criar instruções direcionadas especificamente para arquivos de tar
 
 1. Observe como o Copilot referencia as instruções gerais do projeto e os arquivos de instrução específicos para tarefas.
 
-   <img width="600" alt="screenshot of Copilot chat showing attached references" src="../images/copilot-chat-reviews-instructions.png" />
+   <img width="600" alt="screenshot of Copilot chat showing attached references" src="https://github.com/gabrielhartog-invillia/skills-customize-your-github-copilot-experience/blob/main/.github/images/copilot-chat-reviews-instructions.png?raw=true" />
 
 1. Compare as alterações sugeridas com a estrutura original do arquivo para ver como o Copilot aplicou suas instruções. Aplique as alterações sugeridas e verifique como a tarefa atualizada aparece no **Site Preview**.
 

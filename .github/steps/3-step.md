@@ -1,16 +1,16 @@
-## Passo 3: Criando Prompts Reutilizáveis
+## Passo 3: Construindo Reusable Skills
 
-Agora que você estabeleceu instruções para as tarefas, você quer agilizar a criação de novas tarefas.
+Agora que você definiu instruções para as tarefas, você quer agilizar a criação de novas tarefas.
 
-Creating assignments is a repetitive task and involves multiple steps, a perfect scenario for a reusable skill!
+Criar assignments é uma tarefa repetitiva e envolve várias etapas, um cenário perfeito para uma reusable skill!
 
-- Creating the assignment content
-- Registering it in the website configuration
-- Attaching starter code or data files
+- Criar o conteúdo da assignment
+- Registrar no config do website
+- Anexar starter code ou data files
 
-### 📖 Theory: Agent Skills
+### 📖 Teoria: Agent Skills
 
-Agent Skills are an [open standard](https://agentskills.io/) for giving AI agents specialized capabilities and workflows. A skill is a folder containing a `SKILL.md` file with metadata and instructions, plus optional scripts, references, and other resources.
+Agent Skills são um [open standard](https://agentskills.io/) para dar aos AI agents capacidades e workflows especializados. Uma skill é uma pasta contendo um arquivo `SKILL.md` com metadata e instruções, além de scripts, references e outros recursos opcionais.
 
 ```text
 skill-name/
@@ -19,28 +19,28 @@ skill-name/
 ├── references/       # Optional: documentation
 ```
 
-Agents discover skills automatically through **progressive disclosure**:
+Agents descobrem skills automaticamente por meio de **progressive disclosure**:
 
-1. **Discovery**: At startup, agents load only the skill's `name` and `description`.
-1. **Activation**: When a task matches a skill's description, the agent reads the full `SKILL.md` instructions.
-1. **Resources**: Additional files (references, scripts) are loaded only when needed.
+1. **Discovery**: Na inicialização, os agents carregam apenas `name` e `description` da skill.
+1. **Activation**: Quando uma tarefa corresponde à descrição da skill, o agent lê as instruções completas de `SKILL.md`.
+1. **Resources**: Arquivos adicionais (references, scripts) são carregados somente quando necessário.
 
-This means you can have many skills installed without slowing things down — only what's relevant gets loaded into context.
+Isso significa que você pode ter muitas skills instaladas sem deixar tudo mais lento: apenas o que for relevante é carregado no contexto.
 
-Skills get activated in two ways: **automatically** when Copilot matches your request to a skill's description, or **explicitly** via a slash command (`/skill-name`). Because agents rely on the `name` and `description` to decide which skills to activate, writing a clear, specific description is important.
+As skills são ativadas de duas formas: **automaticamente**, quando o Copilot relaciona sua solicitação à descrição de uma skill, ou **explicitamente** via slash command (`/skill-name`). Como os agents dependem de `name` e `description` para decidir quais skills ativar, escrever uma descrição clara e específica é essencial.
 
-Visual Studio Code discovers skills from the `.github/skills/` directory by default.
+Por padrão, o Visual Studio Code descobre skills no diretório `.github/skills/`.
 
 > [!TIP]
-> Write a clear `description` in the frontmatter so the agent knows **when** to use the skill. Reference additional files for templates, examples, and detailed documentation.
+> Escreva uma `description` clara no frontmatter para que o agent saiba **quando** usar a skill. Referencie arquivos adicionais para templates, exemplos e documentação detalhada.
 
-See the [VS Code Docs: Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) for more information.
+Consulte o [VS Code Docs: Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) para mais informações.
 
-### ⌨️ Activity: Create the Skill Skeleton
+### ⌨️ Atividade: Criar o Skill Skeleton
 
-Let's start by creating the full skill directory structure and its main `SKILL.md` file. We'll create all the directories upfront — including `references/` and `scripts/` — so everything is in place as we add files in the following activities.
+Vamos começar criando a estrutura completa de diretórios da skill e seu arquivo principal `SKILL.md`. Vamos criar todos os diretórios desde já, incluindo `references/` e `scripts/`, para que tudo esteja pronto à medida que adicionarmos arquivos nas próximas atividades.
 
-1. Create the skill directory structure with all subdirectories:
+1. Crie a estrutura de diretórios da skill com todos os subdiretórios:
 
    ```text
    .github/skills/new-assignment/
@@ -48,109 +48,109 @@ Let's start by creating the full skill directory structure and its main `SKILL.m
    .github/skills/new-assignment/scripts/
    ```
 
-1. Create the main skill file:
+1. Crie o arquivo principal da skill:
 
    ```text
    .github/skills/new-assignment/SKILL.md
    ```
 
-1. Add the following content. The frontmatter `name` and `description` are what the agent sees at discovery time to decide whether to activate the skill. The body provides the workflow the agent follows once activated.
+1. Adicione o conteúdo abaixo. O frontmatter `name` e `description` é o que o agent vê no momento de discovery para decidir se deve ativar a skill. O corpo fornece o workflow que o agent segue após a ativação.
 
    ```markdown
    ---
    name: new-assignment
-   description: Create a new programming homework assignment for Mergington High School students. Use this skill whenever the user wants to create, add, scaffold, or generate a new assignment, exercise, or homework — even if they don't use the word "assignment" explicitly.
+   description: Crie uma nova programming homework assignment para estudantes da Mergington High School. Use esta skill sempre que o usuário quiser criar, adicionar, scaffoldar ou gerar uma nova assignment, exercise ou homework, mesmo que não use explicitamente a palavra "assignment".
    ---
 
    # Criar Nova Tarefa de Programação
 
-   Assignments live in `assignments/<id>/`, and the website reads `config.json` to display them. Follow these steps to create both.
+   Assignments ficam em `assignments/<id>/`, e o website lê `config.json` para exibi-las. Siga estas etapas para criar ambos.
 
-   ## Step 1: Gather Requirements
+   ## Etapa 1: Coletar Requisitos
 
-   If the user hasn't specified, ask what programming concept the assignment should cover.
+   Se o usuário não tiver especificado, pergunte qual conceito de programação a assignment deve cobrir.
 
-   > 📖 Read [references/assignment-guide.md](references/assignment-guide.md) for guidance on difficulty, scope, and when to include starter code.
+   > 📖 Leia [references/assignment-guide.md](references/assignment-guide.md) para guidance sobre dificuldade, escopo e quando incluir starter code.
 
-   ## Step 2: Create the Assignment
+   ## Etapa 2: Criar a Assignment
 
-   1. Create `assignments/<kebab-case-id>/README.md` following the [assignment template](../../../templates/assignment-template.md)
-   2. (Optional) Add starter code or data files to the same directory
+   1. Crie `assignments/<kebab-case-id>/README.md` seguindo o [assignment template](../../../templates/assignment-template.md)
+   2. (Opcional) Adicione starter code ou data files no mesmo diretório
 
-   ## Step 3: Register with the Website
+   ## Etapa 3: Registrar no Website
 
-   Use the bundled scripts — do NOT edit `config.json` manually.
+   Use os bundled scripts, NÃO edite `config.json` manualmente.
 
-   **Register the assignment:**
+   **Registrar a assignment:**
 
        node .github/skills/new-assignment/scripts/update-config.js <id> "<title>" "<description>"
 
-   **Register each file as an attachment** (starter code, data files, etc.):
+   **Registrar cada arquivo como attachment** (starter code, data files etc.):
 
        node .github/skills/new-assignment/scripts/add-attachment.js <id> "<display-name>" <filename> <type>
 
-   Common types: `python`, `csv`, `json`, `txt`, `html`
+   Tipos comuns: `python`, `csv`, `json`, `txt`, `html`
 
-   ## Step 4: Verify
+   ## Etapa 4: Verificar
 
-   Confirm the assignment was registered correctly: check that `config.json` contains the new entry and that all created files exist on disk.
+   Confirme que a assignment foi registrada corretamente: verifique se `config.json` contém a nova entrada e se todos os arquivos criados existem em disco.
    ```
 
-   Notice how the `SKILL.md` references two other directories — `references/` and `scripts/` — that we haven't created yet. This is the progressive disclosure pattern in action: the agent only loads these files when it reaches a step that needs them.
+   Note como `SKILL.md` referencia dois outros diretórios, `references/` e `scripts/`, que ainda não criamos. Esse é o padrão de progressive disclosure em ação: o agent só carrega esses arquivos quando chega a uma etapa que precisa deles.
 
-### ⌨️ Activity: Add a Reference Guide
+### ⌨️ Atividade: Adicionar um Reference Guide
 
-Let's populate the `references/` directory with domain knowledge the agent can consult as needed. The `SKILL.md` points to `references/assignment-guide.md` so the agent can read it when deciding difficulty and scope — but only when it actually needs that context.
+Vamos preencher o diretório `references/` com domain knowledge que o agent pode consultar quando necessário. O `SKILL.md` aponta para `references/assignment-guide.md` para que o agent possa ler quando decidir dificuldade e escopo, mas somente quando realmente precisar desse contexto.
 
-1. Create the reference file:
+1. Crie o arquivo de referência:
 
    ```text
    .github/skills/new-assignment/references/assignment-guide.md
    ```
 
-1. Add the following content to give the agent pedagogical guidance:
+1. Adicione o conteúdo abaixo para fornecer orientação pedagógica ao agent:
 
    ```markdown
    # Assignment Design Guide
 
-   Guidance for designing assignment content — what to teach and how to scope it. For formatting and markdown structure, the project's instruction files handle that automatically.
+   Orientações para desenhar conteúdo de assignment: o que ensinar e como definir o escopo. Para formatação e estrutura markdown, os instruction files do projeto já tratam isso automaticamente.
 
    ## Difficulty & Scope
 
-   - Target 2–4 tasks per assignment that build on each other
-   - Start with something a student can finish in under 10 minutes, then add complexity
-   - The last task can be a stretch goal, but earlier tasks should build confidence
-   - Stick to one core concept per assignment (e.g., "loops", not "loops + file I/O + error handling")
+   - Defina 2–4 tasks por assignment que evoluam entre si
+   - Comece com algo que um aluno consiga terminar em menos de 10 minutos e depois aumente a complexidade
+   - A última task pode ser um stretch goal, mas as anteriores devem construir confiança
+   - Foque em um core concept por assignment (ex.: "loops", não "loops + file I/O + error handling")
 
    ## Starter Code
 
-   Include starter code when:
+   Inclua starter code quando:
 
    - The assignment needs boilerplate the student shouldn't write from scratch
    - You want students to follow a specific function signature or structure
 
-   Skip it when the point is writing something from scratch (e.g., "write a script that…").
+   Evite quando o objetivo for escrever algo do zero (ex.: "write a script that...").
 
-   ## Example Topics by Difficulty
+   ## Exemplos de Tópicos por Dificuldade
 
    - **Beginner**: variables, conditionals, loops, string formatting
    - **Intermediate**: functions, lists/dicts, file I/O, basic classes
    - **Advanced**: APIs, data analysis, testing, web frameworks
    ```
 
-   By separating this from `SKILL.md`, we keep the main instructions focused on _workflow_ while this file provides _domain knowledge_. The agent only reads it when it reaches the gather-requirements step.
+   Ao separar isso de `SKILL.md`, mantemos as instruções principais focadas em _workflow_, enquanto este arquivo fornece _domain knowledge_. O agent só lê esse conteúdo quando chega à etapa de gather requirements.
 
-### ⌨️ Activity: Add Bundled Scripts
+### ⌨️ Atividade: Adicionar Bundled Scripts
 
-Skills can bundle scripts for deterministic tasks that are better handled by code than by the AI. Our skill needs two scripts: one to register the assignment in `config.json` and one to attach files (starter code, datasets, etc.) to it. Having the agent run these scripts ensures consistent, error-free config updates every time.
+Skills podem incluir scripts para tarefas determinísticas que são tratadas melhor por código do que por AI. Nossa skill precisa de dois scripts: um para registrar a assignment em `config.json` e outro para anexar arquivos (starter code, datasets etc.) a ela. Fazer o agent executar esses scripts garante updates de config consistentes e sem erro sempre.
 
-1. Create the first script that registers a new assignment:
+1. Crie o primeiro script, que registra uma nova assignment:
 
    ```text
    .github/skills/new-assignment/scripts/update-config.js
    ```
 
-   Add the following content:
+   Adicione o conteúdo abaixo:
 
    ```javascript
    const fs = require("fs");
@@ -181,15 +181,15 @@ Skills can bundle scripts for deterministic tasks that are better handled by cod
    console.log(`Added "${title}" (due ${dueDate})`);
    ```
 
-   This script handles the math for the due date and the exact JSON structure — things that are tedious and error-prone for an AI to get right every time.
+   Esse script cuida do cálculo da due date e da estrutura exata do JSON, pontos que são tediosos e propensos a erro para uma AI acertar sempre.
 
-1. Create a second script that attaches files to an existing assignment:
+1. Crie um segundo script para anexar arquivos a uma assignment existente:
 
    ```text
    .github/skills/new-assignment/scripts/add-attachment.js
    ```
 
-   Add the following content:
+   Adicione o conteúdo abaixo:
 
    ```javascript
    const fs = require("fs");
@@ -248,9 +248,9 @@ Skills can bundle scripts for deterministic tasks that are better handled by cod
    console.log(`Added "${displayName}" (${filename}) to assignment "${assignmentId}"`);
    ```
 
-   This second script validates that the file actually exists, prevents duplicate attachments, and produces clear error messages — all things that make the skill more robust when the agent executes it.
+   Esse segundo script valida se o arquivo realmente existe, evita attachments duplicados e produz error messages claras, tudo isso deixa a skill mais robusta quando o agent a executa.
 
-1. Review the final skill structure. It should look like this:
+1. Revise a estrutura final da skill. Ela deve ficar assim:
 
    ```text
    .github/skills/new-assignment/
@@ -262,24 +262,24 @@ Skills can bundle scripts for deterministic tasks that are better handled by cod
        └── add-attachment.js             # Attaches files to assignments
    ```
 
-   Each part of the skill has a clear role:
-   - **`SKILL.md`** — the agent's playbook: what steps to follow and when to load other resources
-   - **`references/`** — background knowledge that helps the agent make better decisions
-   - **`scripts/`** — deterministic operations handled by code instead of AI generation
+   Cada parte da skill tem um papel claro:
+   - **`SKILL.md`** — o playbook do agent: quais etapas seguir e quando carregar outros recursos
+   - **`references/`** — background knowledge que ajuda o agent a tomar melhores decisões
+   - **`scripts/`** — operações determinísticas tratadas por código em vez de geração por AI
 
-### ⌨️ Activity: Test the Assignment Skill
+### ⌨️ Atividade: Testar a Assignment Skill
 
 1. Abra o Copilot Chat no VS Code e certifique-se de estar no modo `Agent`.
 
-1. Ask Copilot to create a new assignment using a natural language prompt. Because the skill has a clear `description`, Copilot will automatically match your request and activate it.
+1. Peça ao Copilot para criar uma nova assignment usando um prompt em linguagem natural. Como a skill tem uma `description` clara, o Copilot vai associar automaticamente sua solicitação e ativá-la.
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Create a new assignment about Building REST APIs with FastAPI framework
+   > Crie uma nova assignment sobre Building REST APIs com FastAPI framework
    > ```
 
-   > 💡 **Tip:** You can also invoke the skill explicitly with the `/new-assignment` slash command in the chat input.
+   > 💡 **Tip:** Você também pode invocar a skill explicitamente com o slash command `/new-assignment` no input do chat.
 
       <details>
       <summary>💡 Ideias de Temas para Tarefas</summary>
@@ -306,40 +306,40 @@ Skills can bundle scripts for deterministic tasks that are better handled by cod
 
       </details>
 
-1. Copilot will read the skill, create the assignment, and run the bundled scripts.
+1. O Copilot vai ler a skill, criar a assignment e executar os bundled scripts.
 
-   <img width="380" alt="Copilot reading the new-assignment SKILL.md file" src="../images/skill-being-used.png" />
+   <img width="380" alt="Copilot reading the new-assignment SKILL.md file" src="https://github.com/gabrielhartog-invillia/skills-customize-your-github-copilot-experience/blob/main/.github/images/skill-being-used.png?raw=true" />
 
-   Accept any confirmation prompts to let it continue.
+   Aceite os prompts de confirmação para permitir que ele continue.
 
-   <img width="380" alt="Copilot asking for confirmation to run node scripts" src="../images/node-confirmation.png" />
+   <img width="380" alt="Copilot asking for confirmation to run node scripts" src="https://github.com/gabrielhartog-invillia/skills-customize-your-github-copilot-experience/blob/main/.github/images/node-confirmation.png?raw=true" />
 
-1. Verify the new assignment appears in the assignments list on the website preview.
+1. Verifique se a nova assignment aparece na lista de assignments no preview do website.
 
    <details>
    <summary>A tarefa não apareceu? 🔍</summary>
 
-   Check these items:
-   - Refresh the page.
-   - A new directory was created in `assignments/`.
-   - The `config.json` file was updated with the new assignment.
+   Verifique estes itens:
+   - Faça refresh da página.
+   - Um novo diretório foi criado em `assignments/`.
+   - O arquivo `config.json` foi atualizado com a nova assignment.
 
    </details>
 
 1. Revise o conteúdo da tarefa gerada para garantir que corresponde às convenções estabelecidas.
 
-1. Commit and push your changes:
-   - The new skill directory: `.github/skills/new-assignment/` (including `SKILL.md`, `references/`, and `scripts/`)
-   - The generated assignment directory and files.
-   - Updated `config.json` configuration.
+1. Faça commit e push das suas alterações:
+   - O novo diretório da skill: `.github/skills/new-assignment/` (incluindo `SKILL.md`, `references/` e `scripts/`)
+   - O diretório e os arquivos da assignment gerada.
+   - A configuração atualizada de `config.json`.
 
 1. Aguarde a Mona preparar o próximo passo!
 
 <details>
 <summary>Está com problemas? 🤷</summary><br/>
 
-- Make sure the skill is in the `.github/skills/new-assignment/` directory with a `SKILL.md` file.
-- The `name` field in `SKILL.md` frontmatter must match the parent directory name (`new-assignment`).
-- If the skill doesn't appear in the `/` menu, reload the VS Code window.
+- Verifique se a skill está no diretório `.github/skills/new-assignment/` com o arquivo `SKILL.md`.
+- O campo `name` no frontmatter de `SKILL.md` precisa corresponder ao nome do diretório pai (`new-assignment`).
+- Se a skill não aparecer no menu `/`, recarregue a janela do VS Code.
 
 </details>
