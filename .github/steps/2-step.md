@@ -34,6 +34,7 @@ Agora vamos criar instruções direcionadas especificamente para arquivos de tar
 
    ```markdown
    ---
+   description: "Instructions to use whenever creating or editing assignment markdown files to ensure consistency and clarity for students."
    applyTo: "assignments/**/*.md"
    ---
 
@@ -78,7 +79,7 @@ Agora vamos criar instruções direcionadas especificamente para arquivos de tar
 
 1. Observe como o Copilot referencia as instruções gerais do projeto e os arquivos de instrução específicos para tarefas.
 
-   <img width="492" height="376" alt="screenshot of Copilot chat showing attached references" src="https://github.com/user-attachments/assets/dbf26be3-5940-4619-af4e-0a4380f16494" />
+   <img width="600" alt="screenshot of Copilot chat showing attached references" src="../images/copilot-chat-reviews-instructions.png" />
 
 1. Compare as alterações sugeridas com a estrutura original do arquivo para ver como o Copilot aplicou suas instruções. Aplique as alterações sugeridas e verifique como a tarefa atualizada aparece no **Site Preview**.
 
