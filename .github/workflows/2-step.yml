@@ -82,7 +82,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v2
         with:
           text-file: "assignments/games-in-python/README.md"
-          keyphrase: "Objective"
+          keyphrase: "Objetivo"
 
       - name: Check for Tasks section in games-in-python README
         id: check-for-tasks
@@ -90,7 +90,7 @@ jobs:
         uses: skills/action-keyphrase-checker@v2
         with:
           text-file: "assignments/games-in-python/README.md"
-          keyphrase: "Tasks"
+          keyphrase: "Tarefas"
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
@@ -107,9 +107,9 @@ jobs:
                 passed: ${{ steps.check-file-exists.outcome == 'success' }}
               - description: "Padrão applyTo encontrado em assignments.instructions.md"
                 passed: ${{ steps.check-for-applyto.outcome == 'success' }}
-              - description: "Seção 🎯 Objective encontrada no README de games-in-python"
+              - description: "Seção 🎯 Objetivo encontrada no README de games-in-python"
                 passed: ${{ steps.check-for-objective.outcome == 'success' }}
-              - description: "Seção 📝 Tasks encontrada no README de games-in-python"
+              - description: "Seção 📝 Tarefas encontrada no README de games-in-python"
                 passed: ${{ steps.check-for-tasks.outcome == 'success' }}
 
       # END: Check practical exercise
