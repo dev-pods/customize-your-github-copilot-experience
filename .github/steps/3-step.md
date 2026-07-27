@@ -96,7 +96,7 @@ Vamos começar criando a estrutura completa de diretórios da skill e seu arquiv
    Confirme que a assignment foi registrada corretamente: verifique se `config.json` contém a nova entrada e se todos os arquivos criados existem no disco.
    ```
 
-   Note como `SKILL.md` referencia dois outros diretórios, `references/` e `scripts/`, que ainda não criamos. Esse é o padrão de progressive disclosure em ação: o agente só carrega esses arquivos quando chega a uma etapa que precisa deles.
+   Note como `SKILL.md` referencia dois outros diretórios, `references/` e `scripts/`, que ainda não criamos. Esse é o padrão de revelação progressiva em ação: o agente só carrega esses arquivos quando chega a uma etapa que precisa deles.
 
 ### ⌨️ Atividade: Adicionar um Guia de Referência
 
@@ -119,7 +119,7 @@ Vamos preencher o diretório `references/` com conhecimento de domínio que o ag
 
    - Defina de 2 a 4 tarefas por assignment que evoluam entre si
    - Comece com algo que um aluno consiga terminar em menos de 10 minutos e depois aumente a complexidade
-   - A última tarefa pode ser um stretch goal, mas as anteriores devem construir confiança
+   - A última tarefa pode ser um objetivo ambicioso, mas as anteriores devem construir confiança
    - Foque em um conceito central por assignment (ex.: "loops", não "loops + file I/O + error handling")
 
    ## Starter Code
