@@ -1,16 +1,16 @@
-## Passo 3: Construindo Reusable Skills
+## Passo 3: Construindo Skills Reutilizáveis
 
-Agora que você definiu instruções para as tarefas, você quer agilizar a criação de novas tarefas.
+Agora que você definiu instruções para as tarefas, é hora de agilizar a criação de novas atividades.
 
-Criar assignments é uma tarefa repetitiva e envolve várias etapas, um cenário perfeito para uma reusable skill!
+Criar assignments é uma atividade repetitiva e envolve várias etapas, um cenário perfeito para uma skill reutilizável.
 
 - Criar o conteúdo da assignment
-- Registrar no config do website
-- Anexar starter code ou data files
+- Registrar no arquivo de configuração do site
+- Anexar starter code ou arquivos de dados
 
 ### 📖 Teoria: Agent Skills
 
-Agent Skills são um [open standard](https://agentskills.io/) para dar aos AI agents capacidades e workflows especializados. Uma skill é uma pasta contendo um arquivo `SKILL.md` com metadata e instruções, além de scripts, references e outros recursos opcionais.
+Agent Skills são um [padrão aberto](https://agentskills.io/) para dar aos agentes de IA capacidades e fluxos de trabalho especializados. Uma skill é uma pasta que contém um arquivo `SKILL.md` com metadados e instruções, além de scripts, referências e outros recursos opcionais.
 
 ```text
 skill-name/
@@ -19,24 +19,24 @@ skill-name/
 ├── references/       # Optional: documentation
 ```
 
-Agents descobrem skills automaticamente por meio de **progressive disclosure**:
+Os agentes descobrem skills automaticamente por meio de **progressive disclosure**:
 
-1. **Discovery**: Na inicialização, os agents carregam apenas `name` e `description` da skill.
-1. **Activation**: Quando uma tarefa corresponde à descrição da skill, o agent lê as instruções completas de `SKILL.md`.
+1. **Discovery**: Na inicialização, os agentes carregam apenas `name` e `description` da skill.
+1. **Activation**: Quando uma tarefa corresponde à descrição da skill, o agente lê as instruções completas de `SKILL.md`.
 1. **Resources**: Arquivos adicionais (references, scripts) são carregados somente quando necessário.
 
-Isso significa que você pode ter muitas skills instaladas sem deixar tudo mais lento: apenas o que for relevante é carregado no contexto.
+Isso significa que você pode ter muitas skills instaladas sem tornar tudo mais lento: apenas o que for relevante é carregado no contexto.
 
-As skills são ativadas de duas formas: **automaticamente**, quando o Copilot relaciona sua solicitação à descrição de uma skill, ou **explicitamente** via slash command (`/skill-name`). Como os agents dependem de `name` e `description` para decidir quais skills ativar, escrever uma descrição clara e específica é essencial.
+As skills são ativadas de duas formas: **automaticamente**, quando o Copilot relaciona sua solicitação à descrição de uma skill, ou **explicitamente**, por meio de um slash command (`/skill-name`). Como os agentes dependem de `name` e `description` para decidir quais skills ativar, escrever uma descrição clara e específica é essencial.
 
 Por padrão, o Visual Studio Code descobre skills no diretório `.github/skills/`.
 
 > [!TIP]
-> Escreva uma `description` clara no frontmatter para que o agent saiba **quando** usar a skill. Referencie arquivos adicionais para templates, exemplos e documentação detalhada.
+> Escreva uma `description` clara no frontmatter para que o agente saiba **quando** usar a skill. Faça referência a arquivos adicionais com templates, exemplos e documentação detalhada.
 
 Consulte o [VS Code Docs: Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills) para mais informações.
 
-### ⌨️ Atividade: Criar o Skill Skeleton
+### ⌨️ Atividade: Criar o Esqueleto da Skill
 
 Vamos começar criando a estrutura completa de diretórios da skill e seu arquivo principal `SKILL.md`. Vamos criar todos os diretórios desde já, incluindo `references/` e `scripts/`, para que tudo esteja pronto à medida que adicionarmos arquivos nas próximas atividades.
 
@@ -54,38 +54,38 @@ Vamos começar criando a estrutura completa de diretórios da skill e seu arquiv
    .github/skills/new-assignment/SKILL.md
    ```
 
-1. Adicione o conteúdo abaixo. O frontmatter `name` e `description` é o que o agent vê no momento de discovery para decidir se deve ativar a skill. O corpo fornece o workflow que o agent segue após a ativação.
+1. Adicione o conteúdo abaixo. O frontmatter `name` e `description` é o que o agente vê no momento de discovery para decidir se deve ativar a skill. O corpo fornece o fluxo de trabalho que o agente segue após a ativação.
 
    ```markdown
    ---
    name: new-assignment
-   description: Crie uma nova programming homework assignment para estudantes da Mergington High School. Use esta skill sempre que o usuário quiser criar, adicionar, scaffoldar ou gerar uma nova assignment, exercise ou homework, mesmo que não use explicitamente a palavra "assignment".
+   description: Crie uma nova assignment de programação para estudantes da Mergington High School. Use esta skill sempre que o usuário quiser criar, adicionar, estruturar ou gerar uma nova assignment, exercício ou homework, mesmo que não use explicitamente a palavra "assignment".
    ---
 
    # Criar Nova Tarefa de Programação
 
-   Assignments ficam em `assignments/<id>/`, e o website lê `config.json` para exibi-las. Siga estas etapas para criar ambos.
+   As assignments ficam em `assignments/<id>/`, e o site lê `config.json` para exibi-las. Siga estas etapas para criar ambos.
 
    ## Etapa 1: Coletar Requisitos
 
-   Se o usuário não tiver especificado, pergunte qual conceito de programação a assignment deve cobrir.
+   Se o usuário não tiver especificado, pergunte qual conceito de programação a assignment deve abordar.
 
-   > 📖 Leia [references/assignment-guide.md](references/assignment-guide.md) para guidance sobre dificuldade, escopo e quando incluir starter code.
+   > 📖 Leia [references/assignment-guide.md](references/assignment-guide.md) para orientações sobre dificuldade, escopo e quando incluir starter code.
 
    ## Etapa 2: Criar a Assignment
 
    1. Crie `assignments/<kebab-case-id>/README.md` seguindo o [assignment template](../../../templates/assignment-template.md)
-   2. (Opcional) Adicione starter code ou data files no mesmo diretório
+   2. (Opcional) Adicione starter code ou arquivos de dados no mesmo diretório
 
    ## Etapa 3: Registrar no Website
 
-   Use os bundled scripts, NÃO edite `config.json` manualmente.
+   Use os scripts incluídos; NÃO edite `config.json` manualmente.
 
    **Registrar a assignment:**
 
        node .github/skills/new-assignment/scripts/update-config.js <id> "<title>" "<description>"
 
-   **Registrar cada arquivo como attachment** (starter code, data files etc.):
+   **Registrar cada arquivo como attachment** (starter code, arquivos de dados etc.):
 
        node .github/skills/new-assignment/scripts/add-attachment.js <id> "<display-name>" <filename> <type>
 
@@ -93,14 +93,14 @@ Vamos começar criando a estrutura completa de diretórios da skill e seu arquiv
 
    ## Etapa 4: Verificar
 
-   Confirme que a assignment foi registrada corretamente: verifique se `config.json` contém a nova entrada e se todos os arquivos criados existem em disco.
+   Confirme que a assignment foi registrada corretamente: verifique se `config.json` contém a nova entrada e se todos os arquivos criados existem no disco.
    ```
 
-   Note como `SKILL.md` referencia dois outros diretórios, `references/` e `scripts/`, que ainda não criamos. Esse é o padrão de progressive disclosure em ação: o agent só carrega esses arquivos quando chega a uma etapa que precisa deles.
+   Note como `SKILL.md` referencia dois outros diretórios, `references/` e `scripts/`, que ainda não criamos. Esse é o padrão de progressive disclosure em ação: o agente só carrega esses arquivos quando chega a uma etapa que precisa deles.
 
-### ⌨️ Atividade: Adicionar um Reference Guide
+### ⌨️ Atividade: Adicionar um Guia de Referência
 
-Vamos preencher o diretório `references/` com domain knowledge que o agent pode consultar quando necessário. O `SKILL.md` aponta para `references/assignment-guide.md` para que o agent possa ler quando decidir dificuldade e escopo, mas somente quando realmente precisar desse contexto.
+Vamos preencher o diretório `references/` com conhecimento de domínio que o agente pode consultar quando necessário. O `SKILL.md` aponta para `references/assignment-guide.md` para que o agente possa ler quando decidir dificuldade e escopo, mas somente quando realmente precisar desse contexto.
 
 1. Crie o arquivo de referência:
 
@@ -108,26 +108,26 @@ Vamos preencher o diretório `references/` com domain knowledge que o agent pode
    .github/skills/new-assignment/references/assignment-guide.md
    ```
 
-1. Adicione o conteúdo abaixo para fornecer orientação pedagógica ao agent:
+1. Adicione o conteúdo abaixo para fornecer orientação pedagógica ao agente:
 
    ```markdown
    # Assignment Design Guide
 
-   Orientações para desenhar conteúdo de assignment: o que ensinar e como definir o escopo. Para formatação e estrutura markdown, os instruction files do projeto já tratam isso automaticamente.
+   Orientações para desenhar conteúdo de assignment: o que ensinar e como definir o escopo. Para formatação e estrutura em markdown, os arquivos de instruções do projeto já tratam isso automaticamente.
 
    ## Difficulty & Scope
 
-   - Defina 2–4 tasks por assignment que evoluam entre si
+   - Defina de 2 a 4 tarefas por assignment que evoluam entre si
    - Comece com algo que um aluno consiga terminar em menos de 10 minutos e depois aumente a complexidade
-   - A última task pode ser um stretch goal, mas as anteriores devem construir confiança
-   - Foque em um core concept por assignment (ex.: "loops", não "loops + file I/O + error handling")
+   - A última tarefa pode ser um stretch goal, mas as anteriores devem construir confiança
+   - Foque em um conceito central por assignment (ex.: "loops", não "loops + file I/O + error handling")
 
    ## Starter Code
 
    Inclua starter code quando:
 
-   - The assignment needs boilerplate the student shouldn't write from scratch
-   - You want students to follow a specific function signature or structure
+   - A assignment precisar de boilerplate que o estudante não deve escrever do zero
+   - Você quiser que os estudantes sigam uma assinatura de função ou estrutura específica
 
    Evite quando o objetivo for escrever algo do zero (ex.: "write a script that...").
 
@@ -138,11 +138,11 @@ Vamos preencher o diretório `references/` com domain knowledge que o agent pode
    - **Advanced**: APIs, data analysis, testing, web frameworks
    ```
 
-   Ao separar isso de `SKILL.md`, mantemos as instruções principais focadas em _workflow_, enquanto este arquivo fornece _domain knowledge_. O agent só lê esse conteúdo quando chega à etapa de gather requirements.
+   Ao separar isso de `SKILL.md`, mantemos as instruções principais focadas em _workflow_, enquanto este arquivo fornece _domain knowledge_. O agente só lê esse conteúdo quando chega à etapa de coleta de requisitos.
 
-### ⌨️ Atividade: Adicionar Bundled Scripts
+### ⌨️ Atividade: Adicionar Scripts Incluídos
 
-Skills podem incluir scripts para tarefas determinísticas que são tratadas melhor por código do que por AI. Nossa skill precisa de dois scripts: um para registrar a assignment em `config.json` e outro para anexar arquivos (starter code, datasets etc.) a ela. Fazer o agent executar esses scripts garante updates de config consistentes e sem erro sempre.
+Skills podem incluir scripts para tarefas determinísticas que são tratadas melhor por código do que por IA. Nossa skill precisa de dois scripts: um para registrar a assignment em `config.json` e outro para anexar arquivos (starter code, datasets etc.) a ela. Fazer o agente executar esses scripts garante atualizações de configuração consistentes e sem erro.
 
 1. Crie o primeiro script, que registra uma nova assignment:
 
@@ -181,7 +181,7 @@ Skills podem incluir scripts para tarefas determinísticas que são tratadas mel
    console.log(`Added "${title}" (due ${dueDate})`);
    ```
 
-   Esse script cuida do cálculo da due date e da estrutura exata do JSON, pontos que são tediosos e propensos a erro para uma AI acertar sempre.
+   Esse script cuida do cálculo da due date e da estrutura exata do JSON, pontos que são tediosos e propensos a erro para uma IA acertar sempre.
 
 1. Crie um segundo script para anexar arquivos a uma assignment existente:
 
@@ -248,7 +248,7 @@ Skills podem incluir scripts para tarefas determinísticas que são tratadas mel
    console.log(`Added "${displayName}" (${filename}) to assignment "${assignmentId}"`);
    ```
 
-   Esse segundo script valida se o arquivo realmente existe, evita attachments duplicados e produz error messages claras, tudo isso deixa a skill mais robusta quando o agent a executa.
+   Esse segundo script valida se o arquivo realmente existe, evita attachments duplicados e produz mensagens de erro claras. Tudo isso deixa a skill mais robusta quando o agente a executa.
 
 1. Revise a estrutura final da skill. Ela deve ficar assim:
 
@@ -263,8 +263,8 @@ Skills podem incluir scripts para tarefas determinísticas que são tratadas mel
    ```
 
    Cada parte da skill tem um papel claro:
-   - **`SKILL.md`** — o playbook do agent: quais etapas seguir e quando carregar outros recursos
-   - **`references/`** — background knowledge que ajuda o agent a tomar melhores decisões
+   - **`SKILL.md`** — o playbook do agente: quais etapas seguir e quando carregar outros recursos
+   - **`references/`** — background knowledge que ajuda o agente a tomar melhores decisões
    - **`scripts/`** — operações determinísticas tratadas por código em vez de geração por AI
 
 ### ⌨️ Atividade: Testar a Assignment Skill
@@ -279,7 +279,7 @@ Skills podem incluir scripts para tarefas determinísticas que são tratadas mel
    > Crie uma nova assignment sobre Building REST APIs com FastAPI framework
    > ```
 
-   > 💡 **Tip:** Você também pode invocar a skill explicitamente com o slash command `/new-assignment` no input do chat.
+   > 💡 **Dica:** Você também pode invocar a skill explicitamente com o slash command `/new-assignment` no campo de entrada do chat.
 
       <details>
       <summary>💡 Ideias de Temas para Tarefas</summary>
@@ -306,7 +306,7 @@ Skills podem incluir scripts para tarefas determinísticas que são tratadas mel
 
       </details>
 
-1. O Copilot vai ler a skill, criar a assignment e executar os bundled scripts.
+1. O Copilot vai ler a skill, criar a assignment e executar os scripts incluídos.
 
    <img width="380" alt="Copilot reading the new-assignment SKILL.md file" src="https://github.com/gabrielhartog-invillia/skills-customize-your-github-copilot-experience/blob/main/.github/images/skill-being-used.png?raw=true" />
 
@@ -320,7 +320,7 @@ Skills podem incluir scripts para tarefas determinísticas que são tratadas mel
    <summary>A tarefa não apareceu? 🔍</summary>
 
    Verifique estes itens:
-   - Faça refresh da página.
+   - Atualize a página.
    - Um novo diretório foi criado em `assignments/`.
    - O arquivo `config.json` foi atualizado com a nova assignment.
 
