@@ -9,7 +9,7 @@ Você ouviu dizer que as Copilot Instructions podem ajudar com isso!
 
 Você vai executar este site na primeira atividade!
 
-<img width="600" alt="screenshot of homework website" src="https://github.com/user-attachments/assets/2383b6e9-64d5-4907-94b3-b67153efb008" />
+<img width="600" alt="screenshot of homework website" src="../images/homework-website-screenshot.png" />
 
 </details>
 
@@ -61,7 +61,7 @@ Agora que você explorou o projeto, vamos criar instruções personalizadas para
 
    ```text
    .github/copilot-instructions.md
-   ``` 
+   ```
 
    > ❕ **Importante:** Certifique-se de que o nome do arquivo está correto. Este nome de arquivo específico é necessário para que o Copilot o reconheça.
 
@@ -102,7 +102,7 @@ Agora que você explorou o projeto, vamos criar instruções personalizadas para
 
 1. Observe que o Copilot usa suas instruções personalizadas como referência na resposta.
 
-   <img width="504" height="183" alt="image" src="https://github.com/user-attachments/assets/2214ed9e-c165-4440-a23e-d2d33c0231a9" />
+   <img width="504" height="183" alt="Copilot response showing custom instructions reference" src="../images/copilot-custom-instructions-reference.png" />
 
 1. Faça o commit do arquivo `.github/copilot-instructions.md` na branch `main` e envie (push) para o GitHub.
 

@@ -1,6 +1,6 @@
 ## Passo 4: Criando Agentes Personalizados
 
-Agora que você tem instruções, prompts e templates trabalhando juntos, você quer levar a personalização um passo além. Ao fazer brainstorming de novas tarefas, você gostaria de ter uma experiência de chat especializada que foque puramente na ideação, em vez da implementação.
+Now that you have instructions, skills, and templates working together, you want to take customization one step further. When brainstorming new assignments, you'd like a specialized chat experience that focuses purely on ideation — and then hands off to Agent Mode to actually implement the assignment creation using the skill you built in Step 3.
 
 ### 📖 Teoria: Agentes Personalizados
 
@@ -14,10 +14,9 @@ O Visual Studio Code procura arquivos `*.agent.md` no diretório `.github/agents
 > - [VS Code Docs: Custom Agents](https://code.visualstudio.com/docs/copilot/customization/custom-agents)
 > - [GitHub Docs: Custom Agents Configuration](https://docs.github.com/en/copilot/reference/custom-agents-configuration)
 
+### ⌨️ Activity: Create an Assignment Brainstorming Custom Agent
 
-### ⌨️ Atividade: Criar um Agente Personalizado para Brainstorming de Tarefas
-
-Agora vamos criar um agente personalizado especializado em brainstorming de ideias para tarefas.
+Now let's create a specialized custom agent that helps brainstorm assignment ideas, then hands off to Agent Mode to actually implement the assignment creation using the skill you built in Step 3.
 
 1. Crie um novo arquivo chamado:
 
@@ -29,65 +28,63 @@ Agora vamos criar um agente personalizado especializado em brainstorming de idei
 
    ```markdown
    ---
-   name: assignment-brainstorming
-   description: Assistente de brainstorming de tarefas
-   tools: ["search", "web"]
+   name: Assignment Brainstorming
+   description: Brainstorm the next programming assignment for Mergington High School students
+   tools: ["search", "vscode/askQuestions"]
+   handoffs:
+     - label: "Create this assignment"
+       agent: agent
+       prompt: "Create a new assignment based on the recommendation from the brainstorming session above."
+       send: true
    ---
 
-   # 💡 Assistente de Brainstorming de Tarefas
+   # Assignment Brainstorming Assistant
 
-   **MODO BRAINSTORM ATIVADO** 🚀
+   Help the teacher decide on the next assignment by analyzing existing curriculum and suggesting one focused idea.
 
-   Sou seu parceiro de brainstorming de tarefas para a Mergington High School! Analiso seu currículo existente e sugiro tarefas criativas que se baseiam no que seus alunos já aprenderam.
+   ## Workflow
 
-   ## Meu Estilo de Resposta
-
-   Toda resposta segue este formato:
-
-   🔍 ANÁLISE RÁPIDA: [Breve análise das tarefas existentes]
-   💡 EXPLOSÃO DE IDEIAS: [3-5 sugestões rápidas]
-   🎯 PRÓXIMA PERGUNTA: [O que preciso saber para ajudar mais]
+   1. Scan the `assignments/` directory and `config.json` to understand what topics are already covered.
+   2. Use the `askQuestions` tool to gather the teacher's preferences — difficulty level, topic area, and any constraints.
+   3. Recommend **one** assignment: a title, the core concept, and a sentence on why it fills a curriculum gap.
+   4. Suggest using the **Create this assignment** button to build it.
 
    ## Regras
 
-   - ⚡ Manter respostas curtas
-   - 🎯 Sempre terminar com uma pergunta específica
-   - 💡 Focar em conceitos, não em detalhes
-   - 🚫 Nunca escrever especificações de tarefas
-   - 📊 Basear ideias em lacunas do currículo existente
+   - Keep responses short — no more than a few sentences per section.
+   - Never write full assignment specs. That's the skill's job.
+   - Base recommendations on gaps in the existing curriculum.
+   - Always end with a clear next step.
    ```
 
-### ⌨️ Atividade: Testar o Agente Personalizado de Brainstorming
+   Let's break down the key parts:
+   - **`tools: ["search", "vscode/askQuestions"]`** — gives the agent the ability to search the codebase and present structured questions with selectable options, rather than relying on free-text back-and-forth.
+   - **`handoffs`** — defines a "Create this assignment" button. When clicked, it switches to the regular Copilot Agent mode and automatically sends a prompt referencing the brainstormed recommendation. This should trigger the `new-assignment` skill from Step 3 so that the assignment is actually created based on the brainstormed idea.
+   - **The body instructions** — define the agent's personality and workflow. Notice it's focused on _ideation only_ and explicitly defers implementation to the skill.
+
+### ⌨️ Activity: Test the Brainstorming Custom Agent
 
 1. Abra o Copilot Chat no VS Code.
 
 1. Selecione seu agente personalizado na lista suspensa de agentes.
 
-   <img width="379" height="218" alt="copilot agent: assignment brainstorming agent selected" src="https://github.com/user-attachments/assets/4effffa7-b8ef-4830-8050-9c777f9f0189" />
+   <img width="379" height="218" alt="copilot agent: assignment brainstorming agent selected" src="../images/custom-agent-dropdown-selection.png" />
 
-1. Teste o agente personalizado com perguntas que um professor faria. Observe o formato de resposta diferente!
-
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
-   > ```prompt
-   > Quais tópicos de tarefas estão faltando no meu currículo atual?
-   > ```
+1. Start a brainstorming session:
 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Sugira 3 tarefas avançadas de Python para meus alunos.
+   > What should I teach next?
    > ```
 
-   > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
-   >
-   > ```prompt
-   > Qual seria uma boa tarefa de acompanhamento após a tarefa de análise de dados?
-   > ```
+1. The agent will scan your existing assignments, then ask you structured questions about difficulty and topic preferences. Answer the questions to narrow down the recommendation.
 
-1. Tente fazer perguntas de acompanhamento para ver como o agente personalizado mantém sua personalidade ao longo da conversa.
+1. Once the agent recommends an assignment, click the **Create this assignment** button to hand off to Agent Mode for implementation.
 
-1. Faça o commit e envie (push) suas alterações para o arquivo do novo agente personalizado: `.github/agents/assignment-brainstorming.agent.md`
+   <img width="380" alt="Create this assignment handoff button" src="../images/handoff-button.png" />
+
+1. Commit and push your changes to the `main` branch.
 
 1. Aguarde a Mona dar a revisão final!
 
