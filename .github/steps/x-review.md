@@ -8,7 +8,7 @@ Aqui está um resumo das suas conquistas:
 
 - Configurou instruções personalizadas em nível de repositório para garantir geração de código consistente
 - Criou instruções personalizadas direcionadas para tipos de arquivo e diretórios específicos
-- Construiu templates de prompt reutilizáveis para tarefas comuns como exercícios escolares
+- Construiu templates de skills reutilizáveis para tarefas comuns como exercícios escolares
 - Configurou agentes personalizados para fluxos de trabalho especializados
 
 ### O que vem a seguir?
