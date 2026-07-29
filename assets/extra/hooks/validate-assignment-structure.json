@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "type": "command",
+        "command": "python3 .github/hooks/validate-assignment-structure.py",
+        "timeout": 8
+      }
+    ]
+  }
+}
